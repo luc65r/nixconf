@@ -3,7 +3,7 @@ desktop:
 
 {
   imports = [
-    "./${desktop}/home.nix"
+    (./. + "/${desktop}/home.nix")
   ];
 
   xsession.enable = true;
