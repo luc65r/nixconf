@@ -3,7 +3,7 @@
 {
   imports = [
       ./disks.nix
-      (import ./desktops "xmonad")
+      (import ../../desktops "xmonad")
   ];
 
   boot = {
