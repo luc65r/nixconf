@@ -17,7 +17,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lucas = import ./home;
+              users.lucas = import ./home "sally";
             };
           }
         ];
