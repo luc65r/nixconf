@@ -2,7 +2,7 @@ desktop:
 { ... }:
 
 {
-  import = [
+  imports = [
     (./. + "/${desktop}")
   ];
 
