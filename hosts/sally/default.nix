@@ -3,6 +3,7 @@
 {
   imports = [
       ./disks.nix
+      (./desktops "xmonad")
   ];
 
   boot = {
