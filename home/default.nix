@@ -6,5 +6,6 @@ host:
     ./git.nix
     ./editor.nix
     ./shell.nix
+    ./editor.nix
   ];
 }
