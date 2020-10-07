@@ -3,4 +3,5 @@
   vim
   git
   wget
+  tree
 ]
