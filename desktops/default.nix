@@ -2,6 +2,10 @@ desktop:
 { ... }:
 
 {
+  import = [
+    (./. + "/${desktop}")
+  ];
+
   services.xserver = {
     enable = true;
     layout = "fr";
