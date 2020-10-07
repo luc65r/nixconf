@@ -28,29 +28,40 @@
 
   services.openssh.enable = true;
 
-  networking.hostName = "sally";
+  networking = {
+    hostName = "sally";
 
-  networking.useDHCP = false;
-  networking.interfaces.eno1.useDHCP = true;
-  networking.interfaces.wlp1s0.useDHCP = true;
+    useDHCP = false;
+    interfaces = {
+      eno1.useDHCP = true;
+      wlp1s0.useDHCP = true;
+    };
 
-  networking.wireless.enable = true;
-  networking.wireless.networks = {
-    test = {
-      psk = "testtest";
+    wireless = {
+      enable = true;
+      networks = {
+        test = {
+          psk = "testtest";
+        };
+      };
     };
   };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  users.mutableUsers = false;
-  users.users.root.password = "root";
-  users.users.lucas = {
-    password = "lucas";
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
+  users = {
+    mutableUsers = false;
+
+    users = {
+      root.password = "root";
+      lucas = {
+        password = "lucas";
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        extraGroups = [ "wheel" ];
+      };
+    };
   };
 
   nix = {
