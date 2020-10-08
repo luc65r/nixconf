@@ -7,5 +7,6 @@ host:
     ./editor.nix
     ./shell.nix
     ./editor.nix
+    ./rofi.nix
   ];
 }
