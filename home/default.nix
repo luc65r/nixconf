@@ -10,6 +10,7 @@ host:
     ./rofi.nix
     ./font.nix
     ./terminal.nix
+    ./locale.nix
   ];
 
   home.packages = import ./packages.nix {

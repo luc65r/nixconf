@@ -10,6 +10,7 @@ desktop:
     enable = true;
     layout = "fr";
     xkbVariant = "bepo";
+    xkbOptions = "ctrl:swapcaps";
 
     libinput = {
       enable = true;
