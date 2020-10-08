@@ -10,4 +10,8 @@
       vim-polyglot
     ];
   };
+
+  programs.emacs = {
+    enable = true;
+  };
 }
