@@ -11,6 +11,7 @@ host:
     ./font.nix
     ./terminal.nix
     ./locale.nix
+    ./browser.nix
   ];
 
   home.packages = import ./packages.nix {
