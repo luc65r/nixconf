@@ -4,4 +4,5 @@ with pkgs;
 
 [
   htop
+  ktouch
 ]
