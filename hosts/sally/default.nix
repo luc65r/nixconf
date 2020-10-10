@@ -17,10 +17,12 @@
 
   services.tlp.enable = true;
 
+  /*
   services.thermald = {
     enable = true;
     adaptive = true;
   };
+  */
 
   i18n.defaultLocale = "fr_FR.UTF-8";
   console = {
