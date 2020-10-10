@@ -13,5 +13,9 @@
 
   programs.emacs = {
     enable = true;
+    extraPackages = epkgs: with epkgs; [
+      magit
+      nix-mode
+    ];
   };
 }
