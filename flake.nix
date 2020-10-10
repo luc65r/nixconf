@@ -12,6 +12,10 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/sally
+          {
+            system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+          }
+
           home-manager.nixosModules.home-manager
           {
             home-manager = {
