@@ -12,6 +12,7 @@ host:
     ./terminal.nix
     ./locale.nix
     ./browser.nix
+    ./video.nix
   ];
 
   home.packages = import ./packages.nix {
