@@ -14,6 +14,7 @@ desktop:
 
     libinput = {
       enable = true;
+      naturalScrolling = true;
     };
   };
 
