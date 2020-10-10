@@ -40,4 +40,6 @@
       label = "/swap";
     }
   ];
+
+  service.fstrim.enable = true;
 }
