@@ -55,8 +55,12 @@
     wireless = {
       enable = true;
       networks = {
-        test = {
-          psk = "testtest";
+        "test" = {
+          pskRaw = "e0b3e76d15f938fcd6ce682459a868312a0e0b779aee825a66aca6837701e685";
+        };
+
+        "SFR_7B6A" = {
+          pskRaw = "962bf144b37eeb24b8ce4ff1c5db1e5b47ae40ff944feddd66ad059d0193a870";
         };
       };
     };
