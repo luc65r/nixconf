@@ -86,7 +86,7 @@
         password = "lucas";
         isNormalUser = true;
         shell = pkgs.zsh;
-        extraGroups = [ "wheel" "audio" ];
+        extraGroups = [ "wheel" "audio" "video" ];
       };
     };
   };
