@@ -15,7 +15,12 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      "USB_BLACKLIST_BTUSB" = 1;
+    };
+  };
 
   /*
   services.thermald = {
