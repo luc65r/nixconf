@@ -41,8 +41,6 @@
     inherit pkgs;
   };
 
-  services.openssh.enable = true;
-
   networking = {
     hostName = "sally";
 
