@@ -61,6 +61,9 @@
   hardware.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
+    extraModules = with pkgs; [
+      pulseaudio-modules-bt
+    ];
   };
 
   hardware.bluetooth.enable = true;
