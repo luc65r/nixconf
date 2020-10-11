@@ -81,9 +81,9 @@
     mutableUsers = false;
 
     users = {
-      root.password = "root";
+      root.hashedPassword = "$6$ySKmr51WkZ$54rjKWNyZBag.xZj/u9DvzUZsmEvaavotAhjxeNZv5lSUROp466T3oQfm5eiy/HSJ5z5B5yCYmJ1BlZsV1hMT/";
       lucas = {
-        password = "lucas";
+        hashedPassword = "$6$UUoarSfXWDxumM$aVec3H9FYCiexi.mB2cp1vD9Rw3zvNtTY0aJLdGixRu59IBRW1x8mGUmfa1z3Wn./pCplT0PWyfveh751dcDA.";
         isNormalUser = true;
         shell = pkgs.zsh;
         extraGroups = [ "wheel" "audio" "video" ];
@@ -100,4 +100,3 @@
 
   system.stateVersion = "20.09";
 }
-
