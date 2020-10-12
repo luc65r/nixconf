@@ -5,4 +5,6 @@ with pkgs;
 [
   htop
   ktouch
+
+  discord
 ]
