@@ -7,4 +7,7 @@ with pkgs;
   ktouch
 
   discord
+  teams
+
+  libreoffice-fresh
 ]
