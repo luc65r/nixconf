@@ -13,7 +13,7 @@
 
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: with epkgs; [
+    extraPackages = epkgs: with epkgs.melpaPackages; [
       magit
       nix-mode
       dracula-theme
