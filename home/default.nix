@@ -18,4 +18,6 @@ host:
   home.packages = import ./packages.nix {
     inherit pkgs;
   };
+
+  services.syncthing.enable = true;
 }
