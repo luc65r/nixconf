@@ -60,6 +60,10 @@
         "SFR_7B6A" = {
           pskRaw = "962bf144b37eeb24b8ce4ff1c5db1e5b47ae40ff944feddd66ad059d0193a870";
         };
+
+        "SFR_F9A8" = {
+          pskRaw = "294e256afc4809d54ed2e53960d9cff89ea5fd73dd1de7a94a84f4996c791edf";
+        };
       };
     };
   };
