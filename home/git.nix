@@ -5,6 +5,8 @@
     enable = true;
     userName = "Lucas Ransan";
     userEmail = "lucas@ransan.tk";
+
+    ignores = [ "*~" ];
   };
 
   services.gpg-agent = {
