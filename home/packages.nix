@@ -10,4 +10,6 @@ with pkgs;
   teams
 
   libreoffice-fresh
+
+  brightnessctl
 ]
