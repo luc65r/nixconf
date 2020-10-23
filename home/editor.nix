@@ -17,6 +17,7 @@
       magit
       nix-mode
       dracula-theme
+      haskell-mode
     ];
   };
 }
