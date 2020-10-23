@@ -16,6 +16,7 @@
     extraPackages = epkgs: with epkgs; [
       magit
       nix-mode
+      dracula-theme
     ];
   };
 }
