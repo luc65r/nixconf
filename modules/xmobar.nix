@@ -14,11 +14,15 @@ in {
       config = mkOption {
         type = types.nullOr types.path;
         default = null;
+        description = ''
+          The configuration file to be used for xmobar.
+        '';
       };
 
       package = mkOption {
         type = types.package;
         default = pkgs.xmobar;
+        defaultText = "pkgs.xmobar";
       };
     };
   };
