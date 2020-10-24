@@ -81,6 +81,9 @@
 
   services.xserver = {
     videoDrivers = [ "amdgpu" ];
+    deviceSection = ''
+      Option "TearFree" "on"
+    '';
   };
 
   users = {
