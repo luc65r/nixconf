@@ -79,6 +79,10 @@
 
   hardware.bluetooth.enable = true;
 
+  services.xserver = {
+    videoDrivers = [ "amdgpu" ];
+  };
+
   users = {
     mutableUsers = false;
 
