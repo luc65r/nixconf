@@ -12,6 +12,8 @@ with pkgs;
   jq
   exa
 
+  nix-prefetch-github
+
   ktouch
 
   discord
