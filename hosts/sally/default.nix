@@ -13,6 +13,10 @@
     };
 
     kernelPackages = pkgs.linuxPackages_latest;
+
+    extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
+    kernelModules = [ "zenpower" ];
+    blacklistedKernelModules = [ "k10temp" ];
   };
 
   services.tlp = {
