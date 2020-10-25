@@ -7,6 +7,9 @@ with pkgs;
   gotop
   bpytop
 
+  zenmonitor
+  ryzenadj
+
   ripgrep
   fd
   jq
