@@ -93,6 +93,13 @@
     '';
   };
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      amdvlk # Vulkan
+    ];
+  };
+
   users = {
     mutableUsers = false;
 
