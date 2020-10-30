@@ -3,7 +3,10 @@
 {
   imports = [
       ./disks.nix
-      (import ../../desktops "xmonad")
+      (import ../../desktops {
+        server = "wayland";
+        desktop = "sway";
+      })
   ];
 
   boot = {

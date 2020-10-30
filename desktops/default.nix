@@ -1,5 +1,8 @@
-desktop:
-{ ... }:
+{ server ? "X"
+, desktop
+}@args:
+
+{ lib, ... }:
 
 {
   imports = [
@@ -7,7 +10,7 @@ desktop:
   ];
 
   services.xserver = {
-    enable = true;
+    enable = server == "X";
     layout = "fr";
     xkbVariant = "bepo";
     xkbOptions = "ctrl:swapcaps";
@@ -19,5 +22,5 @@ desktop:
     };
   };
 
-  home-manager.users.lucas = import ./home.nix desktop;
+  home-manager.users.lucas = import ./home.nix args;
 }

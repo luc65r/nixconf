@@ -1,4 +1,7 @@
-desktop:
+{ server
+, desktop
+}:
+
 { ... }:
 
 {
@@ -6,5 +9,5 @@ desktop:
     (./. + "/${desktop}/home.nix")
   ];
 
-  xsession.enable = true;
+  xsession.enable = server == "X";
 }
