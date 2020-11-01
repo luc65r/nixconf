@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.wayland.windowManager.sway;
@@ -22,6 +22,7 @@ in {
 
       keybindings = lib.mkOptionDefault {
         "${mod}+q" = "kill";
+        "${mod}+d" = "exec wofi --show run";
 
         "${mod}+quotedbl" = "workspace number 1";
         "${mod}+guillemotleft" = "workspace number 2";
@@ -45,4 +46,8 @@ in {
       };
     };
   };
+
+  home.packages = with pkgs; [
+    wofi
+  ];
 }
