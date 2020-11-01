@@ -16,6 +16,11 @@ in {
           xkb_variant = "bepo";
           xkb_options = "ctrl:swapcaps";
         };
+
+        "type:touchpad" = {
+          tap = "enabled";
+          natural_scroll = "enabled";
+        };
       };
 
       modifier = "Mod4";
