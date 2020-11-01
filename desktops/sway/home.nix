@@ -11,6 +11,8 @@
           xkb_options = "ctrl:swapcaps";
         };
       };
+
+      modifier = "Mod4";
     };
   };
 }
