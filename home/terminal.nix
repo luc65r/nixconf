@@ -8,7 +8,7 @@
       cursor.style = "Beam";
       window.padding = { x = 5; y = 5; };
       font = {
-        size = 8;
+        size = 12;
         normal = {
           family = "Iosevka";
           style = "Regular";
