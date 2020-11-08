@@ -9,7 +9,7 @@
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
-      luks.devices."persist".device = "/dev/disk/by-uuid/9ea72a37-3975-4a72-aba0-f3b8c33f692d";
+      luks.devices."home".device = "/dev/disk/by-uuid/9ea72a37-3975-4a72-aba0-f3b8c33f692d";
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
@@ -20,8 +20,8 @@
     fsType = "tmpfs";
   };
 
-  fileSystems."/persist" = {
-    device = "/dev/mapper/persist";
+  fileSystems."/home" = {
+    label = "/home";
     fsType = "ext4";
   };
 
