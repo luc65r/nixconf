@@ -32,11 +32,6 @@ host:
       ".emacs.d"
       ".ssh"
       ".cache"
-      ".config/discord"
-      ".config/blender"
-      ".config/syncthing"
-      ".local"
-      ".mozilla"
     ];
 
     files = [
