@@ -108,6 +108,7 @@
       lucas = {
         hashedPassword = "$6$UUoarSfXWDxumM$aVec3H9FYCiexi.mB2cp1vD9Rw3zvNtTY0aJLdGixRu59IBRW1x8mGUmfa1z3Wn./pCplT0PWyfveh751dcDA.";
         isNormalUser = true;
+        createHome = false;
         shell = pkgs.zsh;
         extraGroups = [ "wheel" "audio" "video" ];
       };

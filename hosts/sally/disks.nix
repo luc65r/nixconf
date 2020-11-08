@@ -44,6 +44,6 @@
   services.fstrim.enable = true;
 
   systemd.tmpfiles.rules = [
-    "L /home - - - - /persist/home"
+    "L+ /home - - - - /persist/home"
   ];
 }
