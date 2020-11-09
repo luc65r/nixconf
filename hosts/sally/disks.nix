@@ -31,7 +31,7 @@
   };
 
   fileSystems."/nix" = {
-    label = "/nix";
+    label = "nix";
     fsType = "ext4";
   };
 
