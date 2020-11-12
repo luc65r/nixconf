@@ -48,6 +48,10 @@
     inherit pkgs;
   };
 
+  environment.pathsToLink = [
+    "/share/zsh"
+  ];
+
   networking = {
     hostName = "sally";
 
