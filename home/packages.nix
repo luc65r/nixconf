@@ -25,4 +25,6 @@ with pkgs;
   libreoffice-fresh
 
   brightnessctl
+
+  steam
 ]

@@ -78,6 +78,7 @@
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
+    support32Bit = true;
     package = pkgs.pulseaudioFull;
     extraModules = with pkgs; [
       pulseaudio-modules-bt
@@ -95,6 +96,7 @@
 
   hardware.opengl = {
     enable = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       amdvlk # Vulkan
     ];
