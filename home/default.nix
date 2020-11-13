@@ -13,6 +13,7 @@ host:
     ./locale.nix
     ./browser.nix
     ./video.nix
+    ./music.nix
   ];
 
   home.packages = import ./packages.nix {
