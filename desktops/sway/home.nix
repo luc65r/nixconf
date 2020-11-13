@@ -55,7 +55,14 @@ in {
         "${mod}+Shift+minus" = "move container to workspace number 8";
         "${mod}+Shift+slash" = "move container to workspace number 9";
       };
+
+      bars = [];
     };
+  };
+
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
   };
 
   home.packages = with pkgs; [
