@@ -7,6 +7,12 @@ let
 in {
   wayland.windowManager.sway = {
     enable = true;
+
+    wrapperFeatures = {
+      base = true;
+      gtk = true;
+    };
+
     config = {
       terminal = "alacritty";
 
