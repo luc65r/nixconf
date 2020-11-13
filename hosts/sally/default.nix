@@ -2,11 +2,12 @@
 
 {
   imports = [
-      ./disks.nix
-      (import ../../desktops {
-        server = "wayland";
-        desktop = "sway";
-      })
+    ./disks.nix
+    ./fonts.nix
+    (import ../../desktops {
+      server = "wayland";
+      desktop = "sway";
+    })
   ];
 
   boot = {
