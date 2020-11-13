@@ -33,7 +33,7 @@ in {
 
       keybindings = lib.mkOptionDefault {
         "${mod}+q" = "kill";
-        "${mod}+d" = "exec wofi --show run";
+        "${mod}+d" = "exec bemenu-run";
 
         "${mod}+quotedbl" = "workspace number 1";
         "${mod}+guillemotleft" = "workspace number 2";
@@ -59,6 +59,6 @@ in {
   };
 
   home.packages = with pkgs; [
-    wofi
+    bemenu
   ];
 }
