@@ -24,7 +24,7 @@
   };
 
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       "USB_BLACKLIST_BTUSB" = 1;
     };
