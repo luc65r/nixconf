@@ -33,7 +33,7 @@ in {
 
       keybindings = lib.mkOptionDefault {
         "${mod}+q" = "kill";
-        "${mod}+d" = "exec bemenu-run";
+        "${mod}+d" = "exec bemenu-run -b";
 
         "${mod}+quotedbl" = "workspace number 1";
         "${mod}+guillemotleft" = "workspace number 2";
