@@ -63,6 +63,39 @@ in {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
+    style = ''
+      * {
+        border: none;
+        font-family: Iosevka, Material Design Icons;
+      }
+
+      window#waybar {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    '';
+
+    settings = [ {
+      layer = "top";
+      position = "top";
+      height = 16;
+      modules-left = [
+        "sway/workspaces"
+      ];
+      modules-center = [];
+      modules-right = [
+        "battery"
+        "clock"
+        "tray"
+      ];
+
+      modules = {
+        battery = {
+          format = "{icon} {capacity}%";
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+        };
+      };
+    } ];
   };
 
   home.packages = with pkgs; [
