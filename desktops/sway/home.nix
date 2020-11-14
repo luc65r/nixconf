@@ -54,6 +54,11 @@ in {
         "${mod}+Shift+plus" = "move container to workspace number 7";
         "${mod}+Shift+minus" = "move container to workspace number 8";
         "${mod}+Shift+slash" = "move container to workspace number 9";
+
+        "XF86AudioPlay" = "mpc play";
+        "XF86AudioPause" = "mpc pause";
+        "XF86AudioPrev" = "mpc prev";
+        "XF86AudioNext" = "mpc next";
       };
 
       bars = [];
@@ -100,5 +105,6 @@ in {
 
   home.packages = with pkgs; [
     bemenu
+    mpc_cli
   ];
 }
