@@ -27,7 +27,11 @@ with pkgs;
   #texlive.combined.scheme-full
 
   brightnessctl
+  pulsemixer
 
   steam
   zoom-us
+
+  zip
+  unzip
 ]
