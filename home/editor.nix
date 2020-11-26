@@ -47,6 +47,7 @@
       nix-mode
       dracula-theme
       haskell-mode
+      pdf-tools
     ];
   };
 }
