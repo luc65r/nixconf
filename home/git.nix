@@ -9,6 +9,10 @@
     userEmail = "lucas@ransan.tk";
 
     ignores = [ "*~" ];
+
+    extraConfig = {
+      core.editor = "vim";
+    };
   };
 
   services.gpg-agent = {
