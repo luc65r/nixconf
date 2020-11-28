@@ -48,6 +48,7 @@
 
   networking = {
     hostName = "flash";
+    hostId = "ab654bd1";
 
     useDHCP = false;
     interfaces.enp4s0 = {
