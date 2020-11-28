@@ -16,6 +16,8 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+    supportedFilesystems = [ "zfs" ];
+    zfs.enableUnstable = true;
   };
 
   fileSystems."/" = {
