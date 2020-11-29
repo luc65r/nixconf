@@ -46,6 +46,16 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/torrent" = {
+    device = "qto/Torrent";
+    fsType = "zfs";
+  };
+
+  fileSystems."/srv/music" = {
+    device = "qto/Musique";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
