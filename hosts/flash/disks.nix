@@ -41,6 +41,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home" = {
+    device = "qto/home";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
@@ -51,7 +56,6 @@
 
   environment.persistence."/persist" = {
     directories = [
-      "/home"
       "/var/log"
     ];
   };
