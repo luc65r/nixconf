@@ -42,7 +42,7 @@
   };
 
   fileSystems."/home" = {
-    device = "qto/home";
+    device = "perso/home";
     fsType = "zfs";
   };
 
