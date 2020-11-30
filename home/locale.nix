@@ -1,12 +1,11 @@
-host:
-{ ... }:
+{ host, lib, ... }:
 
 {
   home = {
     keyboard = {
       layout = "fr";
-      variant = if host == "flash" then "be" else "bepo";
-      options = [
+      variant = host.keymap;
+      options = lib.mkIf (host.keymap == "bepo") [
         "ctrl:swapcaps"
       ];
     };

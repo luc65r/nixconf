@@ -18,6 +18,14 @@
     nixosConfigurations = {
       sally = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
+        specialArgs.host = {
+          name = "sally";
+          type = "laptop";
+          keymap = "bepo";
+          wm = "sway";
+        };
+
         modules = [
           ./hosts/sally
           {
@@ -26,11 +34,21 @@
           }
 
           home-manager.nixosModules.home-manager
+          ({ host, ... }: {
+            options.home-manager.users = with nixpkgs.lib; mkOption {
+              type = with types; attrsOf (submoduleWith {
+                modules = [ ];
+                specialArgs = specialArgs // {
+                  inherit host;
+                };
+              });
+            };
+          })
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lucas = import ./home "sally";
+              users.lucas = import ./home;
             };
           }
 
@@ -42,6 +60,14 @@
 
       flash = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
+        specialArgs.host = {
+          name = "flash";
+          type = "desktop";
+          keymap = "be";
+          wm = "i3";
+        };
+
         modules = [
           ./hosts/flash
           {
@@ -52,11 +78,21 @@
           (import "${impermanence}/nixos.nix")
 
           home-manager.nixosModules.home-manager
+          ({ host, ... }: {
+            options.home-manager.users = with nixpkgs.lib; mkOption {
+              type = with types; attrsOf (submoduleWith {
+                modules = [ ];
+                specialArgs = {
+                  inherit host;
+                };
+              });
+            };
+          })
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lucas = import ./home "flash";
+              users.lucas = import ./home;
             };
           }
 

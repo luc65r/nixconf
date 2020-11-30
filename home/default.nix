@@ -1,4 +1,3 @@
-host:
 { pkgs, ... }:
 
 {
@@ -10,7 +9,7 @@ host:
     ./rofi.nix
     ./font.nix
     ./terminal.nix
-    (import ./locale.nix host)
+    ./locale.nix
     ./browser.nix
     ./video.nix
     ./music.nix
