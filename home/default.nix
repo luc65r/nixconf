@@ -14,6 +14,7 @@ host:
     ./browser.nix
     ./video.nix
     ./music.nix
+    ./ssh.nix
   ];
 
   home.packages = import ./packages.nix {
