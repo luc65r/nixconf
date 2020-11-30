@@ -32,6 +32,30 @@
           }
         ];
       };
+
+      flash = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/flash
+          {
+            system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+            nix.registry.nixpkgs.flake = nixpkgs;
+          }
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.lucas = import ./home "flash";
+            };
+          }
+
+          {
+            nixpkgs.overlays = [ emacs.overlay ];
+          }
+        ];
+      };
     };
   };
 }
