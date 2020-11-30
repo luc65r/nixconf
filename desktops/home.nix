@@ -1,4 +1,4 @@
-{ server
+{ server ? "X"
 , desktop
 }:
 
