@@ -17,6 +17,11 @@
       "CF3A5BE1AE37A59C2B06FFE27EF6C6758269833E"
     ];
 
+    pinentryFlavor = "tty";
+    extraConfig = ''
+      allow-loopback-pinentry
+    '';
+
     defaultCacheTtl = 1800;
     maxCacheTtl = 8 * defaultCacheTtl;
     defaultCacheTtlSsh = 1800;
