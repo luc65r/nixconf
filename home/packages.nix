@@ -23,7 +23,7 @@ with pkgs;
   teams
 
   libreoffice-fresh
-  texlive.combined.scheme-full
+  #texlive.combined.scheme-full
 
   brightnessctl
 
