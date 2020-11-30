@@ -42,6 +42,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/home/lucas/Jeux" = {
+    device = "perso/Jeux";
+    fsType = "zfs";
+  };
+
   fileSystems."/srv/torrent" = {
     device = "qto/Torrent";
     fsType = "zfs";
