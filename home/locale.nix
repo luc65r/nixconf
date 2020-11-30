@@ -1,10 +1,11 @@
+host:
 { ... }:
 
 {
   home = {
     keyboard = {
       layout = "fr";
-      variant = "bepo";
+      variant = if host == "flash" then "be" else "bepo";
       options = [
         "ctrl:swapcaps"
       ];

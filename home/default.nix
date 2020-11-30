@@ -10,7 +10,7 @@ host:
     ./rofi.nix
     ./font.nix
     ./terminal.nix
-    ./locale.nix
+    (import ./locale.nix host)
     ./browser.nix
     ./video.nix
     ./music.nix

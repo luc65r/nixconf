@@ -6,6 +6,7 @@
     ./fonts.nix
     (import ../../desktops {
       desktop = "i3";
+      host = "flash";
     })
   ];
 

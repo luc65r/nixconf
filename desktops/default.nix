@@ -1,5 +1,6 @@
 { server ? "X"
 , desktop
+, host
 }@args:
 
 { lib, ... }:
@@ -11,14 +12,15 @@
 
   services.xserver = {
     enable = server == "X";
-    layout = "fr";
-    xkbVariant = "bepo";
-    xkbOptions = "ctrl:swapcaps";
+    layout = if host == "flash" then "be" else "fr";
+    xkbVariant = lib.mkIf (host != "flash") "bepo";
+    xkbOptions = lib.mkIf (host != "flash") "ctrl:swapcaps";
 
     libinput = {
       enable = true;
-      naturalScrolling = true;
-      disableWhileTyping = true;
+      naturalScrolling = lib.mkIf (host != "flash") true;
+      disableWhileTyping = lib.mkIf (host != "flash") true;
+      accelProfile = lib.mkIf (host == "flash") "flat";
     };
   };
 

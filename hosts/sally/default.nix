@@ -7,6 +7,7 @@
     (import ../../desktops {
       server = "wayland";
       desktop = "sway";
+      host = "sally";
     })
   ];
 

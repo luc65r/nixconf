@@ -1,5 +1,6 @@
 { server ? "X"
 , desktop
+, host
 }:
 
 { ... }:
