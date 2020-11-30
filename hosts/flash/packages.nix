@@ -4,4 +4,5 @@
   git
   wget
   tree
+  gptfdisk
 ]
