@@ -14,6 +14,7 @@ with pkgs;
   fd
   jq
   exa
+  tealdeer
 
   nix-prefetch-github
 
