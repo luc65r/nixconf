@@ -3,6 +3,11 @@
 {
   programs.ssh = {
     enable = true;
+    # Fix pinentry spawning on the wrong terminal
+    # https://bugzilla.mindrot.org/show_bug.cgi?id=2824#c9
+    extraConfig = ''
+      Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"
+    '';
   };
 
   programs.gpg = {
