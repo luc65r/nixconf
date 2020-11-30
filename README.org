@@ -26,3 +26,8 @@ My 2020 Slimbook Pro X AMD with blank keycaps
 - Keymap: bépo
 - WM: sway
 - Editor: emacs
+
+** Flash
+
+- CPU: Ryzen 7 1700 @ 4Ghz
+- RAM: 16GB @ 3000MHz
