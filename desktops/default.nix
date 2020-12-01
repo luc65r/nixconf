@@ -1,28 +1,23 @@
-{ server ? "X"
-, desktop
-, host
-}@args:
-
-{ lib, ... }:
+{ lib, host, ... }:
 
 {
   imports = [
-    (./. + "/${desktop}")
+    (./. + "/${host.wm}")
   ];
 
   services.xserver = {
-    enable = server == "X";
-    layout = if host == "flash" then "be" else "fr";
-    xkbVariant = lib.mkIf (host != "flash") "bepo";
-    xkbOptions = lib.mkIf (host != "flash") "ctrl:swapcaps";
+    enable = host.wm != "sway";
+    layout = if host.keymap == "bepo" then "fr" else host.keymap;
+    xkbVariant = lib.mkIf (host.keymap == "bepo") "bepo";
+    xkbOptions = lib.mkIf (host.keymap == "bepo") "ctrl:swapcaps";
 
     libinput = {
       enable = true;
-      naturalScrolling = lib.mkIf (host != "flash") true;
-      disableWhileTyping = lib.mkIf (host != "flash") true;
-      accelProfile = lib.mkIf (host == "flash") "flat";
+      naturalScrolling = lib.mkIf (host.type == "laptop") true;
+      disableWhileTyping = lib.mkIf (host.type == "laptop") true;
+      accelProfile = lib.mkIf (host.type == "desktop") "flat";
     };
   };
 
-  home-manager.users.lucas = import ./home.nix args;
+  home-manager.users.lucas = import ./home.nix;
 }

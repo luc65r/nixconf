@@ -5,10 +5,7 @@
     ./disks.nix
     ./fonts.nix
     ./containers.nix
-    (import ../../desktops {
-      desktop = "i3";
-      host = "flash";
-    })
+    ../../desktops
   ];
 
   boot = {

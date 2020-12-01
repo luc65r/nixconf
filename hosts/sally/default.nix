@@ -4,11 +4,7 @@
   imports = [
     ./disks.nix
     ./fonts.nix
-    (import ../../desktops {
-      server = "wayland";
-      desktop = "sway";
-      host = "sally";
-    })
+    ../../desktops
   ];
 
   boot = {

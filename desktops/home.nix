@@ -1,14 +1,9 @@
-{ server ? "X"
-, desktop
-, host
-}:
-
-{ ... }:
+{ host, ... }:
 
 {
   imports = [
-    (./. + "/${desktop}/home.nix")
+    (./. + "/${host.wm}/home.nix")
   ];
 
-  xsession.enable = server == "X";
+  xsession.enable = host.wm != "sway";
 }
