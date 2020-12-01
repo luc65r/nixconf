@@ -1,4 +1,4 @@
-{ ... }:
+{ host, ... }:
 
 {
   programs.ssh = {
@@ -27,9 +27,9 @@
       allow-loopback-pinentry
     '';
 
-    defaultCacheTtl = 1800;
+    defaultCacheTtl = if host.type == "laptop" then 30 * 60 else 24 * 60 * 60;
     maxCacheTtl = 8 * defaultCacheTtl;
-    defaultCacheTtlSsh = 1800;
-    maxCacheTtlSsh = 8 * defaultCacheTtlSsh;
+    defaultCacheTtlSsh = defaultCacheTtl;
+    maxCacheTtlSsh = maxCacheTtl;
   };
 }
