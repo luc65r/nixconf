@@ -20,6 +20,9 @@
       command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
       set ts=4 sts=4 sw=4 et
+
+      " Restore the cursor
+      au VimLeave * set guicursor=a:ver100
     '';
   };
 
