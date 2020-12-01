@@ -7,6 +7,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-repeat
       vim-surround
+      vim-nix
       { plugin = haskell-vim;
         config = "let g:haskell_indent_guard = 4";
       }
