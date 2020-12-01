@@ -81,6 +81,8 @@
   users = {
     mutableUsers = false;
 
+    groups.transmission.gid = 70;
+
     users = {
       root.hashedPassword = "$6$ySKmr51WkZ$54rjKWNyZBag.xZj/u9DvzUZsmEvaavotAhjxeNZv5lSUROp466T3oQfm5eiy/HSJ5z5B5yCYmJ1BlZsV1hMT/";
       lucas = {
@@ -88,7 +90,7 @@
         isNormalUser = true;
         createHome = false;
         shell = pkgs.zsh;
-        extraGroups = [ "wheel" "audio" "video" ];
+        extraGroups = [ "wheel" "audio" "video" "transmission" ];
       };
     };
   };
