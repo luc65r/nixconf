@@ -11,6 +11,16 @@
       { plugin = haskell-vim;
         config = "let g:haskell_indent_guard = 4";
       }
+      (pkgs.vimUtils.buildVimPlugin rec {
+        pname = "vim-raku";
+        version = "2020-11-2";
+        src = pkgs.fetchFromGitHub {
+          repo = pname;
+          owner = "Raku";
+          rev = "8aa22d6f1036f927888d5c6595ae2d1a31f2352f";
+          sha256 = "07wgj4k9wlp6n56cckki462vpnbi5cy4d8gvv4xj7319k36cjrgb";
+        };
+      })
     ];
 
     extraConfig = ''
