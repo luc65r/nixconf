@@ -10,6 +10,13 @@
 
       keybindings = lib.mkOptionDefault {
         "${modifier}+q" = "kill";
+
+        "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioPause" = "exec mpc toggle";
+        "XF86AudioPrev" = "exec mpc prev";
+        "XF86AudioNext" = "exec mpc next";
       };
 
       bars = [];
