@@ -67,6 +67,11 @@
     enable = true;
     support32Bit = true;
     package = pkgs.pulseaudioFull;
+
+    # For MPD to have a mixer
+    extraClientConf = ''
+      autospawn=yes
+    '';
   };
 
   services.xserver = {

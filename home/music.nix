@@ -5,6 +5,13 @@
     enable = true;
     musicDirectory = if (host.name == "flash")
       then "/srv/music" else "/home/lucas/Musique";
+
+    extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "pulse audio"
+      }
+    '';
   };
 
   programs.ncmpcpp = {
