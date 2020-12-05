@@ -21,6 +21,9 @@
           sha256 = "07wgj4k9wlp6n56cckki462vpnbi5cy4d8gvv4xj7319k36cjrgb";
         };
       })
+      { plugin = zig-vim;
+        config = "let g:zig_fmt_autosave = 0";
+      }
     ];
 
     extraConfig = ''
