@@ -111,6 +111,21 @@
     trustedUsers = [ "root" "lucas" ];
   };
 
+  documentation = {
+    enable = true;
+    dev.enable = true;
+    doc.enable = true;
+    man = {
+      enable = true;
+      generateCaches = true;
+    };
+    info.enable = true;
+    nixos = {
+      enable = true;
+      includeAllModules = true;
+    };
+  };
+
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
