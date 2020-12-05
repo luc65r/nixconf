@@ -121,7 +121,7 @@
     };
     info.enable = true;
     nixos = {
-      enable = true;
+      enable = false; # manual-combined.xml fails to validate
       includeAllModules = false; # Infinite recursion
     };
   };
