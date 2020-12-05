@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, host, lib, ... }:
 
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-wayland;
+    package = lib.mkIf (host.wm == "sway") pkgs.firefox-wayland;
   };
 }
