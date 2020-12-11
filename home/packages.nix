@@ -29,4 +29,5 @@ with pkgs;
   brightnessctl
 
   steam
+  zoom-us
 ]
