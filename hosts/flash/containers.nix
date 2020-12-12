@@ -20,5 +20,19 @@
         };
       };
     };
+
+    ftp = {
+      config = import ../../containers/ftp.nix;
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/home/test/torrent" = {
+          hostPath = "/srv/torrent/Downloads";
+          isReadOnly = true;
+        };
+      };
+    };
   };
 }
