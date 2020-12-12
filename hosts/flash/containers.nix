@@ -20,19 +20,5 @@
         };
       };
     };
-
-    samba = {
-      config = import ../../containers/samba.nix;
-
-      ephemeral = true;
-      autoStart = true;
-
-      bindMounts = {
-        "/srv/torrent" = {
-          hostPath = "/srv/torrent/Downloads";
-          isReadOnly = true;
-        };
-      };
-    };
   };
 }
