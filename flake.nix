@@ -33,12 +33,14 @@
             nix.registry.nixpkgs.flake = nixpkgs;
           }
 
+          (import "${impermanence}/nixos.nix")
+
           home-manager.nixosModules.home-manager
           ({ host, ... }: {
             options.home-manager.users = with nixpkgs.lib; mkOption {
               type = with types; attrsOf (submoduleWith {
                 modules = [ ];
-                specialArgs = specialArgs // {
+                specialArgs = {
                   inherit host;
                 };
               });
