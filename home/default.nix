@@ -21,4 +21,6 @@
   };
 
   services.syncthing.enable = true;
+
+  home.stateVersion = "21.03";
 }
