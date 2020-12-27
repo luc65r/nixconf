@@ -60,6 +60,16 @@
     defaultGateway = { address = "192.168.0.1"; interface = "enp4s0"; };
     defaultGateway6 = { address = "2a01:cb19:86ed:f600:46a6:1eff:fe80:c516"; interface = "enp4s0"; };
     nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        51413
+      ];
+      allowedUDPPorts = [
+        51413
+      ];
+    };
   };
 
   sound.enable = true;
