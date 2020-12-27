@@ -48,6 +48,7 @@
       dracula-theme
       haskell-mode
       pdf-tools
+      rg
     ];
   };
 }
