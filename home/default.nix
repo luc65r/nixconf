@@ -22,5 +22,10 @@
 
   services.syncthing.enable = true;
 
+  programs.direnv = {
+    enable = true;
+    enableNixDirenvIntegration = true;
+  };
+
   home.stateVersion = "21.03";
 }
