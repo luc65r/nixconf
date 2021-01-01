@@ -24,6 +24,7 @@
 
     pinentryFlavor = "tty";
     extraConfig = ''
+      allow-emacs-pinentry
       allow-loopback-pinentry
     '';
 
