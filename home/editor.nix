@@ -49,6 +49,17 @@
       haskell-mode
       pdf-tools
       rg
+      lsp-mode
+      pkgs.rnix-lsp
+      company
+      direnv
+      ccls
+      json-mode
+      company-lsp
+      lsp-ui
+      lsp-haskell
+      flycheck
+      pinentry
     ];
   };
 }
