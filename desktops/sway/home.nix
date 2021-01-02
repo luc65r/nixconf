@@ -103,6 +103,11 @@ in {
     } ];
   };
 
+  programs.mako = {
+    enable = true;
+    font = "Iosevka 12";
+  };
+
   home.packages = with pkgs; [
     bemenu
     mpc_cli
