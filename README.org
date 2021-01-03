@@ -29,8 +29,10 @@ My 2020 Slimbook Pro X AMD with blank keycaps
 
 ** Flash
 
+- Usage: 2018 -
 - CPU: Ryzen 7 1700 @ 4Ghz
-- RAM: 16GB @ 3000MHz
+- RAM: 48GB @ 3000MHz
+- SSD: 256GB
 - Keymap: be
 - WM: i3
 - Editor: neovim
