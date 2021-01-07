@@ -60,6 +60,7 @@
       lsp-haskell
       flycheck
       pinentry
+      meson-mode
     ];
   };
 }
