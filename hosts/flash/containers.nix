@@ -41,5 +41,19 @@
       ephemeral = true;
       autoStart = true;
     };
+
+    navidrome = {
+      config = import ../../containers/navidrome.nix;
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/home/navidrome/music" = {
+          hostPath = "/srv/music";
+          isReadOnly = true;
+        };
+      };
+    };
   };
 }
