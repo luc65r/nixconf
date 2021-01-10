@@ -34,5 +34,12 @@
         };
       };
     };
+
+    stream = {
+      config = import ../../containers/stream.nix;
+
+      ephemeral = true;
+      autoStart = true;
+    };
   };
 }

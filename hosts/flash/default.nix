@@ -65,6 +65,7 @@
       enable = true;
       allowedTCPPorts = [
         51413
+        1935
       ];
       allowedUDPPorts = [
         51413
