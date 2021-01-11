@@ -52,6 +52,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/navidrome" = {
+    device = "qto/Navidrome";
+    fsType = "zfs";
+  };
+
   fileSystems."/srv/music" = {
     device = "qto/Musique";
     fsType = "zfs";

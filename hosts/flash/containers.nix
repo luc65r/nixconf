@@ -53,6 +53,11 @@
           hostPath = "/srv/music";
           isReadOnly = true;
         };
+
+        "/home/navidrome/data" = {
+          hostPath = "/srv/navidrome/data";
+          isReadOnly = false;
+        };
       };
     };
   };

@@ -4,6 +4,7 @@ let
   home = "/home/navidrome";
   configFile = (pkgs.formats.toml {}).generate "navidrome.toml" {
     MusicFolder = "${home}/music";
+    DataFolder = "${home}/data";
   };
 
 in {
@@ -11,9 +12,6 @@ in {
     description = "Navidrome";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
-    preStart = ''
-      mkdir ${home}/data
-    '';
 
     serviceConfig = {
       ExecStart = ''
