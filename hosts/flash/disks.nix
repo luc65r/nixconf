@@ -62,6 +62,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/ogg" = {
+    device = "qto/ogg";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
