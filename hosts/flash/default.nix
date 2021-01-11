@@ -70,7 +70,6 @@
       ];
       allowedUDPPorts = [
         51413
-        4533
       ];
     };
   };
@@ -99,7 +98,10 @@
   users = {
     mutableUsers = false;
 
+    users.transmission.uid = 70;
     groups.transmission.gid = 70;
+    users.navidrome.uid = 90;
+    groups.navidrome.gid = 90;
 
     users = {
       root.hashedPassword = "$6$ySKmr51WkZ$54rjKWNyZBag.xZj/u9DvzUZsmEvaavotAhjxeNZv5lSUROp466T3oQfm5eiy/HSJ5z5B5yCYmJ1BlZsV1hMT/";

@@ -24,7 +24,10 @@ in {
   };
 
   users.users.navidrome = {
+    uid = 90;
     inherit home;
     createHome = true;
   };
+
+  users.groups.navidrome.gid = 90;
 }
