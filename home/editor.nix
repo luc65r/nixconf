@@ -63,6 +63,7 @@
       meson-mode
       rust-mode
       cargo
+      counsel
     ];
   };
 }
