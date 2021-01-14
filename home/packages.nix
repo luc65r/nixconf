@@ -26,6 +26,8 @@ with pkgs;
   libreoffice-fresh
   #texlive.combined.scheme-full
 
+  translate-shell
+
   brightnessctl
   pulsemixer
 
