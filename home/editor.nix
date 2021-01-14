@@ -61,6 +61,8 @@
       flycheck
       pinentry
       meson-mode
+      rust-mode
+      cargo
     ];
   };
 }
