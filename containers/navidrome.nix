@@ -8,6 +8,15 @@ let
   };
 
 in {
+  security.pam.loginLimits = [
+    { # too many open files
+      domain = "navidrome";
+      item = "nofile";
+      type = "soft";
+      value = "8196";
+    }
+  ];
+
   systemd.services.navidrome = {
     description = "Navidrome";
     after = [ "network.target" ];
