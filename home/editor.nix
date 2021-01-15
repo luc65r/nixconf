@@ -66,6 +66,7 @@
       counsel
       libmpdel
       mpdel
+      flx
     ];
   };
 }
