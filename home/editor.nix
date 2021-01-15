@@ -64,6 +64,8 @@
       rust-mode
       cargo
       counsel
+      libmpdel
+      mpdel
     ];
   };
 }
