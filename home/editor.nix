@@ -67,6 +67,8 @@
       libmpdel
       mpdel
       flx
+      auctex
+      cdlatex
     ];
   };
 }
