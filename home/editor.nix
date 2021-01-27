@@ -50,7 +50,6 @@
       pdf-tools
       rg
       lsp-mode
-      pkgs.rnix-lsp
       company
       direnv
       ccls
