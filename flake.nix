@@ -76,7 +76,7 @@
           host = {
             name = "flash";
             type = "desktop";
-            keymap = "be";
+            keymap = "bepo";
             wm = "i3";
           };
 
