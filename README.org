@@ -4,15 +4,15 @@
 
 ** Rebuild the system
 
-#+BEGIN_SRC shell
-sudo nixos-rebuild --flakes . switch
-#+END_SRC
+   #+begin_src shell
+     sudo nixos-rebuild --flakes . switch
+   #+end_src
 
 ** Update flake.lock
 
-#+BEGIN_SRC shell
-nix flake update --commit-lock-file --recreate-lock-file
-#+END_SRC
+   #+begin_src shell
+     nix flake update --commit-lock-file --recreate-lock-file
+   #+end_src
 
 * Devices
 
@@ -36,3 +36,19 @@ My 2020 Slimbook Pro X AMD with blank keycaps
 - Keymap: bépo
 - WM: i3
 - Editor: emacs
+
+
+* My nixsecrets repo
+
+  Here is what ~flake.nix~ looks like:
+  #+begin_src nix
+    {
+      description = "My NixOS secrets";
+
+      outputs = { self, nixpkgs }: {
+	secrets = with nixpkgs.lib; foldl (r: f: recursiveUpdate r (import f)) {} [
+	  /* paths to attribute sets */
+	];
+      };
+    }
+  #+end_src
