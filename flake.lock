@@ -72,7 +72,28 @@
         "emacs": "emacs",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1611781838,
+        "narHash": "sha256-Itm+9yiSQBkWragS/Z5QwFE83ZT/89y8nfABiRSAM04=",
+        "ref": "master",
+        "rev": "e1aa184a5f6413d9563eb417a50ed8c097ba5918",
+        "revCount": 1,
+        "type": "git",
+        "url": "file:///home/lucas/nixsecrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/lucas/nixsecrets"
       }
     }
   },
