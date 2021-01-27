@@ -14,6 +14,7 @@
     ./video.nix
     ./music.nix
     ./ssh.nix
+    ./email.nix
   ];
 
   home.packages = import ./packages.nix {
