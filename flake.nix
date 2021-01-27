@@ -12,13 +12,14 @@
       url = "github:nix-community/impermanence";
       flake = false;
     };
+    flake-utils.url = "github:numtide/flake-utils";
     secrets = {
       url = "git+file:///home/lucas/nixsecrets";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, emacs, impermanence, secrets }: {
+  outputs = { self, nixpkgs, home-manager, emacs, impermanence, flake-utils, secrets }: {
     nixosConfigurations = {
       sally = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -116,5 +117,13 @@
         ];
       };
     };
-  };
+  } // flake-utils.lib.eachDefaultSystem (system: let
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    devShell = pkgs.mkShell {
+      nativeBuildInputs = with pkgs; [
+        rnix-lsp
+      ];
+    };
+  });
 }
