@@ -69,6 +69,7 @@
       flx
       auctex
       cdlatex
+      go-mode
     ];
   };
 }
