@@ -63,12 +63,11 @@
       rust-mode
       cargo
       counsel
-      libmpdel
-      mpdel
       flx
       auctex
       cdlatex
       go-mode
+      emms
     ];
   };
 }
