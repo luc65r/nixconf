@@ -15,7 +15,7 @@
       enable = true;
       naturalScrolling = lib.mkIf (host.type == "laptop") true;
       disableWhileTyping = lib.mkIf (host.type == "laptop") true;
-      accelProfile = lib.mkIf (host.type == "desktop") "flat";
+      mouse.accelProfile = "flat";
     };
   };
 
