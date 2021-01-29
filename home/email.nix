@@ -25,6 +25,21 @@
           enable = true;
         };
       };
+
+      eisti = {
+        address = "lucas.ransan@eisti.eu";
+        realName = "Lucas Ransan";
+        inherit (secrets.mail.eisti) userName;
+        passwordCommand = "echo '${secrets.mail.eisti.password}'";
+        flavor = "gmail.com";
+        mbsync = {
+          enable = true;
+          create = "both";
+        };
+        mu = {
+          enable = true;
+        };
+      };
     };
   };
 
