@@ -25,6 +25,9 @@ with pkgs;
 
   libreoffice-fresh
   texlive.combined.scheme-full
+  aspell
+  aspellDicts.fr
+  aspellDicts.en
 
   translate-shell
 
