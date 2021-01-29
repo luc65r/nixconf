@@ -24,6 +24,9 @@
         mu = {
           enable = true;
         };
+        msmtp = {
+          enable = true;
+        };
       };
 
       eisti = {
@@ -39,6 +42,9 @@
         mu = {
           enable = true;
         };
+        msmtp = {
+          enable = true;
+        };
       };
     };
   };
@@ -48,6 +54,10 @@
   };
 
   programs.mu = {
+    enable = true;
+  };
+
+  programs.msmtp = {
     enable = true;
   };
 }
