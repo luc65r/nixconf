@@ -1,25 +1,15 @@
-{ secrets, ... }:
+{ secrets, lib, ... }:
 
 {
   accounts.email = {
-    accounts = {
-      tedomum = {
-        primary = true;
-        address = "lucas@ransan.tk";
-        realName = "Lucas Ransan";
-        inherit (secrets.mail.tedomum) userName;
-        passwordCommand = "echo '${secrets.mail.tedomum.password}'";
-        imap = {
-          host = "mail.tedomum.net";
-          port = 993;
-        };
-        smtp = {
-          host = "mail.tedomum.net";
-          port = 465;
-        };
+    accounts = let
+      common = name: {
+        inherit (secrets.mail.${name}) userName;
+        passwordCommand = "echo '${secrets.mail.${name}.password}'";
         mbsync = {
           enable = true;
           create = "both";
+          expunge = "both";
         };
         mu = {
           enable = true;
@@ -28,23 +18,25 @@
           enable = true;
         };
       };
+    in {
+      tedomum = lib.recursiveUpdate (common "tedomum") {
+        primary = true;
+        address = "lucas@ransan.tk";
+        realName = "Lucas Ransan";
+        imap = {
+          host = "mail.tedomum.net";
+          port = 993;
+        };
+        smtp = {
+          host = "mail.tedomum.net";
+          port = 465;
+        };
+      };
 
-      eisti = {
+      eisti = lib.recursiveUpdate (common "eisti") {
         address = "lucas.ransan@eisti.eu";
         realName = "Lucas Ransan";
-        inherit (secrets.mail.eisti) userName;
-        passwordCommand = "echo '${secrets.mail.eisti.password}'";
         flavor = "gmail.com";
-        mbsync = {
-          enable = true;
-          create = "both";
-        };
-        mu = {
-          enable = true;
-        };
-        msmtp = {
-          enable = true;
-        };
       };
     };
   };
