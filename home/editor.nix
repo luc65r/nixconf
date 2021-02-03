@@ -68,6 +68,7 @@
       cdlatex
       go-mode
       emms
+      go-translate
     ];
   };
 }
