@@ -69,6 +69,7 @@
       go-mode
       emms
       go-translate
+      raku-mode
     ];
   };
 }
