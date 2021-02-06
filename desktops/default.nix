@@ -13,8 +13,10 @@
 
     libinput = {
       enable = true;
-      naturalScrolling = lib.mkIf (host.type == "laptop") true;
-      disableWhileTyping = lib.mkIf (host.type == "laptop") true;
+      touchpad = {
+        naturalScrolling = true;
+        disableWhileTyping = true;
+      };
       mouse.accelProfile = "flat";
     };
   };
