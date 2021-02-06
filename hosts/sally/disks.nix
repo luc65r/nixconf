@@ -49,6 +49,7 @@
       "/home"
       "/var/log"
       "/var/lib/bluetooth"
+      "/etc/NetworkManager/system-connections"
     ];
   };
 }
