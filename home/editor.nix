@@ -70,6 +70,7 @@
       emms
       go-translate
       raku-mode
+      pkgs.mu
     ];
   };
 }
