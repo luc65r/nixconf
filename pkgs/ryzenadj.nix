@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchFromGitHub
 , cmake
 , pciutils
@@ -28,7 +29,7 @@ stdenv.mkDerivation rec {
     cp ryzenadj $out/bin
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Adjust power management settings for Mobile Raven Ridge Ryzen Processors";
     homepage = "https://github.com/FlyGoat/RyzenAdj";
     license = licenses.lgpl3;
