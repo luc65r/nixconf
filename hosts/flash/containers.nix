@@ -60,5 +60,19 @@
         };
       };
     };
+
+    irc = {
+      config = import ../../containers/irc.nix;
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/var/lib/znc" = {
+          hostPath = "/srv/znc";
+          isReadOnly = false;
+        };
+      };
+    };
   };
 }
