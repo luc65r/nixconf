@@ -121,6 +121,16 @@
   };
 
   nix = {
+    gc = {
+      automatic = true;
+      dates = "05:00";
+      options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "06:00" ];
+    };
+    autoOptimiseStore = true;
     package = pkgs.nixUnstable;
     extraOptions = "experimental-features = nix-command flakes";
     trustedUsers = [ "root" "lucas" ];
