@@ -71,6 +71,7 @@
       go-translate
       raku-mode
       pkgs.mu
+      dhall-mode
     ];
   };
 }
