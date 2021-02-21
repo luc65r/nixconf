@@ -72,6 +72,7 @@
       raku-mode
       pkgs.mu
       dhall-mode
+      vterm
     ];
   };
 }
