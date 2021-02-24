@@ -73,6 +73,7 @@
       pkgs.mu
       dhall-mode
       vterm
+      yaml-mode
     ];
   };
 }
