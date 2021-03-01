@@ -74,6 +74,7 @@
       dhall-mode
       vterm
       yaml-mode
+      transmission
     ];
   };
 }
