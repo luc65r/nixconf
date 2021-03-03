@@ -64,7 +64,17 @@
           }
 
           {
-            nixpkgs.overlays = [ emacs.overlay ];
+            nixpkgs.overlays = [
+              emacs.overlay
+
+              (self: super: {
+                firmwareLinuxNonfree = super.firmwareLinuxNonfree.overrideAttrs (old: {
+                  patches = old.patches or [] ++ [
+                    ./patches/0001-Revert-linux-firmware-Update-firmware-file-for-Intel.patch
+                  ];
+                });
+              })
+            ];
           }
         ];
       };
