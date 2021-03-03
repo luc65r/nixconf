@@ -65,14 +65,26 @@
   };
 
   sound.enable = true;
-  hardware.pulseaudio = {
+  services.pipewire = {
     enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
-    extraModules = with pkgs; [
-      pulseaudio-modules-bt
-    ];
+    alsa.enable = true;
+    pulse.enable = true;
   };
+
+  security.pam.loginLimits = [
+    { # Pipewire: Failed to mlock memory
+      domain = "lucas";
+      item = "memlock";
+      type = "soft";
+      value = "64";
+    }
+    {
+      domain = "lucas";
+      item = "memlock";
+      type = "hard";
+      value = "128";
+    }
+  ];
 
   hardware.bluetooth.enable = true;
 
