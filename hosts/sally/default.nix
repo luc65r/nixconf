@@ -69,6 +69,14 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    media-session = {
+      bluezMonitorConfig = {
+        properties.bluez5 = {
+          msbc-support = true;
+          sbc-xq-support = true;
+        };
+      };
+    };
   };
 
   security.pam.loginLimits = [
