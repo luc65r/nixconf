@@ -16,7 +16,7 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
+    extraModulePackages = with config.boot.kernelPackages; [ zenpower v4l2loopback ];
     kernelModules = [ "zenpower" ];
     blacklistedKernelModules = [ "k10temp" ];
   };
