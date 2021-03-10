@@ -39,4 +39,6 @@ with pkgs;
 
   zip
   unzip
+
+  xdg-utils
 ]
