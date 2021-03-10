@@ -75,6 +75,7 @@
       vterm
       yaml-mode
       transmission
+      zig-mode
     ];
   };
 }
