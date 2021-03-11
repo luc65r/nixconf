@@ -76,6 +76,7 @@
       yaml-mode
       transmission
       zig-mode
+      agda2-mode
     ];
   };
 }
