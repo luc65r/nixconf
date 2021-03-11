@@ -64,21 +64,7 @@
           }
 
           {
-            nixpkgs.overlays = [
-              emacs.overlay
-
-              (self: super: {
-                firmwareLinuxNonfree = super.firmwareLinuxNonfree.overrideAttrs (old: rec {
-                  version = "2020-12-18";
-                  src = self.fetchgit {
-                    url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git";
-                    rev = self.lib.replaceStrings ["-"] [""] version;
-                    sha256 = "1rb5b3fzxk5bi6kfqp76q1qszivi0v1kdz1cwj2llp5sd9ns03b5";
-                  };
-                  outputHash = "1p7vn2hfwca6w69jhw5zq70w44ji8mdnibm1z959aalax6ndy146";
-                });
-              })
-            ];
+            nixpkgs.overlays = [ emacs.overlay ];
           }
         ];
       };
