@@ -70,7 +70,7 @@
     alsa.enable = true;
     pulse.enable = true;
     media-session = {
-      bluezMonitorConfig = {
+      config.bluez-monitor = {
         properties.bluez5 = {
           msbc-support = true;
           sbc-xq-support = true;
