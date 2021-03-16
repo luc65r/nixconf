@@ -26,4 +26,19 @@
   networking.firewall.allowedUDPPorts = [
     4010
   ];
+
+  systemd.user.services.scream = {
+    enable = true;
+    description = "Scream";
+    serviceConfig = {
+      ExecStart = "${
+        pkgs.scream-receivers.override {
+          pulseSupport = true;
+        }
+      }/bin/scream-pulse -i virbr0";
+      Restart = "always";
+    };
+    wantedBy = [ "multi-user.target" ];
+    requires = [ "pulseaudio.service" ];
+  };
 }
