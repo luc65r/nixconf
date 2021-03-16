@@ -17,4 +17,8 @@
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-glass 0660 lucas qemu-libvirtd -"
   ];
+
+  networking.firewall.allowedUDPPorts = [
+    4010
+  ];
 }
