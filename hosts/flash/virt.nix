@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     virtmanager
+    looking-glass-client
   ];
 
   virtualisation.libvirtd = {
@@ -12,4 +13,8 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 lucas qemu-libvirtd -"
+  ];
 }
