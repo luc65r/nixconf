@@ -5,6 +5,7 @@
     ./disks.nix
     ./fonts.nix
     ./containers.nix
+    ./virt.nix
     ../../desktops
   ];
 
@@ -21,6 +22,10 @@
     kernelParams = [ "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0" ];
     kernelModules = [ "zenpower" "kvm-amd" "vfio-pci" ];
     blacklistedKernelModules = [ "k10temp" "nouveau" ];
+
+    extraModprobeConfig = ''
+      options kvm ignore_msrs=1
+    '';
   };
 
   /*
@@ -108,7 +113,7 @@
         isNormalUser = true;
         createHome = false;
         shell = pkgs.zsh;
-        extraGroups = [ "wheel" "audio" "video" "transmission" ];
+        extraGroups = [ "wheel" "audio" "video" "transmission" "libvirtd" ];
       };
     };
   };
