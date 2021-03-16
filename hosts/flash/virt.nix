@@ -15,6 +15,10 @@
     onShutdown = "shutdown";
   };
 
+  environment.persistence."/persist".directories = [
+    "/var/lib/libvirt"
+  ];
+
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-glass 0660 lucas qemu-libvirtd -"
   ];
