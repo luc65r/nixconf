@@ -17,8 +17,10 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     extraModulePackages = with config.boot.kernelPackages; [ zenpower v4l2loopback ];
-    kernelModules = [ "zenpower" ];
-    blacklistedKernelModules = [ "k10temp" ];
+    initrd.availableKernelModules = [ "vfio-pci" ];
+    kernelParams = [ "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0" ];
+    kernelModules = [ "zenpower" "kvm-amd" "vfio-pci" ];
+    blacklistedKernelModules = [ "k10temp" "nouveau" ];
   };
 
   /*
@@ -84,10 +86,6 @@
     extraClientConf = ''
       autospawn=yes
     '';
-  };
-
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
   };
 
   hardware.opengl = {
