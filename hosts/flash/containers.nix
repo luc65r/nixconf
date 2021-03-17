@@ -74,5 +74,19 @@
         };
       };
     };
+
+    smb = {
+      config = import ../../containers/smb.nix;
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/srv/torrent/Downloads" = {
+          hostPath = "/srv/torrent/Downloads";
+          isReadOnly = true;
+        };
+      };
+    };
   };
 }
