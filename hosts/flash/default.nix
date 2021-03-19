@@ -71,14 +71,14 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        51413
-        1935
-        4533
-        445 139
+        51413 # transmission
+        1935 # rtmp
+        4533 # navidrome
+        445 139 # samba
       ];
       allowedUDPPorts = [
-        51413
-        137 138
+        51413 # transmission
+        137 138 # samba
       ];
     };
   };
