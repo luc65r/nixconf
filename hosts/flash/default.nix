@@ -75,10 +75,12 @@
         1935 # rtmp
         4533 # navidrome
         445 139 # samba
+        47984 47989 48010 # moonlight
       ];
       allowedUDPPorts = [
         51413 # transmission
         137 138 # samba
+        5353 47998 47999 48000 48002 48010 # moonlight
       ];
     };
   };
