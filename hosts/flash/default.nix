@@ -121,6 +121,11 @@
     extraClientConf = ''
       autospawn=yes
     '';
+
+    extraConfig = ''
+      # I hate when Teams mutes my music
+      unload-module module-role-cork
+    '';
   };
 
   hardware.opengl = {
