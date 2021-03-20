@@ -1,4 +1,4 @@
-{ config, pkgs, lib, options, ... }:
+{ config, pkgs, lib, options, secrets, ... }:
 
 {
   imports = [
@@ -72,6 +72,27 @@
       br0.interfaces = [ "enp4s0" ];
     };
 
+    nat = {
+      enable = true;
+      externalInterface = "br0";
+      internalInterfaces = [ "wg0" ];
+    };
+
+    wireguard = {
+      enable = true;
+      interfaces.wg0 = {
+        ips = [ "10.0.0.1/24" ];
+        listenPort = 51820;
+        inherit (secrets.wireguard.flash) privateKey;
+        peers = [
+          {
+            inherit (secrets.wireguard.whyred) publicKey;
+            allowedIPs = [ "10.0.0.3/32" ];
+          }
+        ];
+      };
+    };
+
     firewall = {
       enable = true;
       allowedTCPPorts = [
@@ -85,6 +106,7 @@
         51413 # transmission
         137 138 # samba
         5353 47998 47999 48000 48002 48010 # moonlight
+        51820 # wireguard
       ];
     };
   };
