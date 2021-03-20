@@ -19,7 +19,11 @@
 
     extraModulePackages = with config.boot.kernelPackages; [ zenpower v4l2loopback ];
     initrd.availableKernelModules = [ "vfio-pci" ];
-    kernelParams = [ "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0" ];
+    kernelParams = [
+      "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0"
+      # Reserve 8GB for the vm
+      "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
+    ];
     kernelModules = [ "zenpower" "kvm-amd" "vfio-pci" ];
     blacklistedKernelModules = [ "k10temp" "nouveau" ];
 
