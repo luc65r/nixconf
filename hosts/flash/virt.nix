@@ -28,7 +28,7 @@
   ];
 
   systemd.user.services.scream = {
-    enable = true;
+    enable = false;
     description = "Scream";
     serviceConfig = {
       ExecStart = "${

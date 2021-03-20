@@ -35,6 +35,7 @@ with pkgs;
   pulsemixer
 
   steam
+  moonlight-qt
   zoom-us
 
   zip
