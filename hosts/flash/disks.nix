@@ -67,6 +67,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/znc" = {
+    device = "qto/znc";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
