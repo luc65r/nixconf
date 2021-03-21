@@ -54,7 +54,6 @@
       direnv
       ccls
       json-mode
-      company-lsp
       lsp-ui
       lsp-haskell
       flycheck
