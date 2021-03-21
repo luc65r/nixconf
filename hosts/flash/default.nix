@@ -90,6 +90,10 @@
         inherit (secrets.wireguard.flash) privateKey;
         peers = [
           {
+            inherit (secrets.wireguard.sally) publicKey;
+            allowedIPs = [ "10.0.0.2/32" ];
+          }
+          {
             inherit (secrets.wireguard.whyred) publicKey;
             allowedIPs = [ "10.0.0.3/32" ];
           }
