@@ -121,6 +121,11 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
+
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
