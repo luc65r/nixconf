@@ -64,6 +64,8 @@
     };
   };
 
+  programs.nm-applet.enable = true;
+
   sound.enable = true;
   services.pipewire = {
     enable = true;
