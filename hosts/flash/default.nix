@@ -109,12 +109,14 @@
         4533 # navidrome
         445 139 # samba
         47984 47989 48010 # moonlight
+        5201 # iperf
       ];
       allowedUDPPorts = [
         51413 # transmission
         137 138 # samba
         5353 47998 47999 48000 48002 48010 # moonlight
         51820 # wireguard
+        5201 # iperf
       ];
     };
   };
