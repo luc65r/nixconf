@@ -8,5 +8,8 @@
       enable = true;
       theme = "robbyrussell";
     };
+    initExtraFirst = ''
+      [[ $TERM == "tramp" ]] && unsetopt zle && PS1='$ ' && return
+    '';
   };
 }
