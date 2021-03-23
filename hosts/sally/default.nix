@@ -1,4 +1,4 @@
-{ config, pkgs, lib, options, ... }:
+{ config, pkgs, lib, options, secrets, ... }:
 
 {
   imports = [
@@ -62,6 +62,20 @@
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
+      dispatcherScripts = [
+        {
+          source = pkgs.writeShellScript "50-wg-loop.sh" ''
+            case $2 in
+              up)
+                ${pkgs.iproute}/bin/ip route add ${secrets.ip} via $IP4_GATEWAY dev $DEVICE_IP_IFACE
+                ;;
+              down)
+                ${pkgs.iproute}/bin/ip route del ${secrets.ip}
+                ;;
+            esac
+          '';
+        }
+      ];
     };
   };
 

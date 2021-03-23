@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1616324107,
-        "narHash": "sha256-9UQ2VTPYx2eG8T2yg46DYJ7rB+hyyd6DZolBl7RmkiM=",
+        "lastModified": 1616599896,
+        "narHash": "sha256-rk63DzjKIN7DvTvUDoc6wXHrRszrF2kDv1Dv/0hdKac=",
         "ref": "master",
-        "rev": "489b727fa985d0bfad68f91ba62cd24eae0df2c3",
-        "revCount": 6,
+        "rev": "54b9513dc8f4f90ef8d6dddb2105ebf7fe5bde4d",
+        "revCount": 7,
         "type": "git",
         "url": "file:///home/lucas/nixsecrets"
       },
