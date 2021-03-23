@@ -61,8 +61,11 @@
 
     networkmanager = {
       enable = true;
+      dns = "systemd-resolved";
     };
   };
+
+  services.resolved.enable = true;
 
   programs.nm-applet.enable = true;
 
