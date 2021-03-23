@@ -105,6 +105,7 @@
       enable = true;
       allowedTCPPorts = [
         51413 # transmission
+        9091 # transmission rpc
         1935 # rtmp
         4533 # navidrome
         445 139 # samba
