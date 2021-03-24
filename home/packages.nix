@@ -20,7 +20,7 @@ with pkgs;
 
   ktouch
 
-  discord
+  discord-wayland
   teams
 
   libreoffice-fresh
