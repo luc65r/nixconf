@@ -78,6 +78,7 @@
       zig-mode
       agda2-mode
       erlang
+      yasnippet
     ];
   };
 }
