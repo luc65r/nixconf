@@ -106,6 +106,8 @@ in {
   programs.mako = {
     enable = true;
     font = "Iosevka 12";
+    defaultTimeout = 5 * 1000;
+    ignoreTimeout = true;
   };
 
   home.packages = with pkgs; [
