@@ -79,6 +79,7 @@
       agda2-mode
       erlang
       yasnippet
+      elpher
     ];
   };
 }
