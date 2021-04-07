@@ -79,6 +79,7 @@
       erlang
       yasnippet
       elpher
+      nasm-mode
     ];
   };
 }
