@@ -149,6 +149,8 @@
     driSupport32Bit = true;
   };
 
+  services.xserver.videoDrivers = [ "radeon" ];
+
   users = {
     mutableUsers = false;
 
