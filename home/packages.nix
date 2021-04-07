@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, host }:
 
 with pkgs;
 
@@ -20,7 +20,9 @@ with pkgs;
 
   ktouch
 
-  discord-wayland
+  (if host.wm == "sway"
+   then discord-wayland
+   else discord)
   teams
 
   libreoffice-fresh

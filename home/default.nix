@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 
 {
   imports = [
@@ -18,7 +18,7 @@
   ];
 
   home.packages = import ./packages.nix {
-    inherit pkgs;
+    inherit pkgs host;
   };
 
   services.syncthing.enable = true;
