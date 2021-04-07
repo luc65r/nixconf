@@ -67,10 +67,10 @@
           source = pkgs.writeShellScript "50-wg-loop.sh" ''
             case $2 in
               up)
-                ${pkgs.iproute}/bin/ip route add ${secrets.ip} via $IP4_GATEWAY dev $DEVICE_IP_IFACE
+                ${pkgs.iproute}/bin/ip route add 109.220.132.33 via $IP4_GATEWAY dev $DEVICE_IP_IFACE
                 ;;
               down)
-                ${pkgs.iproute}/bin/ip route del ${secrets.ip}
+                ${pkgs.iproute}/bin/ip route del 109.220.132.33
                 ;;
             esac
           '';
