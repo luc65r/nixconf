@@ -111,6 +111,7 @@
         445 139 # samba
         47984 47989 48010 # moonlight
         5201 # iperf
+        5000 # znc
       ];
       allowedUDPPorts = [
         51413 # transmission

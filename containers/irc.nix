@@ -3,7 +3,7 @@
 {
   services.znc = {
     enable = true;
-    mutable = false;
+    mutable = true;
     useLegacyConfig = false;
     openFirewall = true;
 
