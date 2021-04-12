@@ -129,20 +129,11 @@
   };
 
   sound.enable = true;
-  hardware.pulseaudio = {
+  services.pipewire = {
     enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
-
-    # For MPD to have a mixer
-    extraClientConf = ''
-      autospawn=yes
-    '';
-
-    extraConfig = ''
-      # I hate when Teams mutes my music
-      unload-module module-role-cork
-    '';
+    alsa.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
   };
 
   hardware.opengl = {
