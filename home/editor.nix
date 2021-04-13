@@ -63,7 +63,7 @@
       cargo
       counsel
       flx
-      #auctex
+      auctex
       cdlatex
       go-mode
       emms
