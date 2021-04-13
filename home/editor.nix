@@ -80,6 +80,7 @@
       yasnippet
       elpher
       nasm-mode
+      znc
     ];
   };
 }
