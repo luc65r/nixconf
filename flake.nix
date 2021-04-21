@@ -20,14 +20,14 @@
   };
 
   outputs = { self, nixpkgs, home-manager, emacs, impermanence, flake-utils, secrets }: {
-    nixosConfigurations = {
-      sally = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = let
+      defaultConfig = name: {
         system = "x86_64-linux";
 
         specialArgs = {
           host = {
-            name = "sally";
-            type = "laptop";
+            inherit name;
+            type = "desktop";
             keymap = "bepo";
             wm = "sway";
           };
@@ -36,7 +36,7 @@
         };
 
         modules = [
-          ./hosts/sally
+          (./hosts + "/${name}")
           {
             system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
             nix.registry.nixpkgs.flake = nixpkgs;
@@ -68,54 +68,16 @@
           }
         ];
       };
+    in {
+      sally = nixpkgs.lib.nixosSystem
+        (nixpkgs.lib.recursiveUpdate (defaultConfig "sally") {
+          specialArgs.host.type = "laptop";
+        });
 
-      flash = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-
-        specialArgs = {
-          host = {
-            name = "flash";
-            type = "desktop";
-            keymap = "bepo";
-            wm = "i3";
-          };
-
-          inherit (secrets) secrets;
-        };
-
-        modules = [
-          ./hosts/flash
-          {
-            system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-            nix.registry.nixpkgs.flake = nixpkgs;
-          }
-
-          (import "${impermanence}/nixos.nix")
-
-          home-manager.nixosModules.home-manager
-          ({ host, secrets, ... }: {
-            options.home-manager.users = with nixpkgs.lib; mkOption {
-              type = with types; attrsOf (submoduleWith {
-                modules = [ ];
-                specialArgs = {
-                  inherit host secrets;
-                };
-              });
-            };
-          })
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.lucas = import ./home;
-            };
-          }
-
-          {
-            nixpkgs.overlays = [ emacs.overlay ];
-          }
-        ];
-      };
+      flash = nixpkgs.lib.nixosSystem
+        (nixpkgs.lib.recursiveUpdate (defaultConfig "flash") {
+          specialArgs.host.wm = "i3";
+        });
     };
   } // flake-utils.lib.eachDefaultSystem (system: let
     pkgs = nixpkgs.legacyPackages.${system};
