@@ -76,7 +76,6 @@
 
       flash = nixpkgs.lib.nixosSystem
         (nixpkgs.lib.recursiveUpdate (defaultConfig "flash") {
-          specialArgs.host.wm = "i3";
         });
     };
   } // flake-utils.lib.eachDefaultSystem (system: let

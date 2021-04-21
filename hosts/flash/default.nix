@@ -139,6 +139,9 @@
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      amdvlk # Vulkan
+    ];
   };
 
   services.xserver.videoDrivers = [ "radeon" ];
