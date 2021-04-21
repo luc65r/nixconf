@@ -27,6 +27,11 @@ in {
           tap = "enabled";
           natural_scroll = "enabled";
         };
+
+        "type:pointer" = {
+          accel_profile = "flat";
+          middle_emulation = "enabled";
+        };
       };
 
       modifier = "Mod4";
