@@ -60,10 +60,10 @@ in {
         "${mod}+Shift+minus" = "move container to workspace number 8";
         "${mod}+Shift+slash" = "move container to workspace number 9";
 
-        "XF86AudioPlay" = "mpc play";
-        "XF86AudioPause" = "mpc pause";
-        "XF86AudioPrev" = "mpc prev";
-        "XF86AudioNext" = "mpc next";
+        "XF86AudioPlay" = "exec mpc toggle";
+        "XF86AudioPause" = "exec mpc pause";
+        "XF86AudioPrev" = "exec mpc prev";
+        "XF86AudioNext" = "exec mpc next";
       };
 
       bars = [];
