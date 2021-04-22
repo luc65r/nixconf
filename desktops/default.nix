@@ -22,4 +22,7 @@
   };
 
   home-manager.users.lucas = import ./home.nix;
+
+  # Gtk-WARNING: The name org.a11y.Bus was not provided by any .serv
+  environment.variables.NO_AT_BRIDGE = "1";
 }
