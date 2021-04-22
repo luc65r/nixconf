@@ -60,8 +60,12 @@ in {
         "${mod}+Shift+minus" = "move container to workspace number 8";
         "${mod}+Shift+slash" = "move container to workspace number 9";
 
+        "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
+
         "XF86AudioPlay" = "exec mpc toggle";
-        "XF86AudioPause" = "exec mpc pause";
+        "XF86AudioPause" = "exec mpc toggle";
         "XF86AudioPrev" = "exec mpc prev";
         "XF86AudioNext" = "exec mpc next";
       };
