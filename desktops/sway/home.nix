@@ -49,6 +49,7 @@ in {
         "${mod}+plus" = "workspace number 7";
         "${mod}+minus" = "workspace number 8";
         "${mod}+slash" = "workspace number 9";
+        "${mod}+asterisk" = "workspace number 10";
 
         "${mod}+Shift+quotedbl" = "move container to workspace number 1";
         "${mod}+Shift+guillemotleft" = "move container to workspace number 2";
@@ -59,6 +60,7 @@ in {
         "${mod}+Shift+plus" = "move container to workspace number 7";
         "${mod}+Shift+minus" = "move container to workspace number 8";
         "${mod}+Shift+slash" = "move container to workspace number 9";
+        "${mod}+Shift+asterisk" = "move container to workspace number 10";
 
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
