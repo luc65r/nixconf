@@ -81,6 +81,7 @@
       elpher
       nasm-mode
       znc
+      vala-mode
     ];
   };
 }
