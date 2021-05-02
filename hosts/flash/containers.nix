@@ -88,5 +88,12 @@
         };
       };
     };
+
+    tracker = {
+      config = import ../../containers/tracker.nix;
+
+      ephemeral = true;
+      autoStart = true;
+    };
   };
 }

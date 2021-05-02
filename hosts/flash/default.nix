@@ -112,6 +112,7 @@
         47984 47989 48010 # moonlight
         5201 # iperf
         5000 # znc
+        6969 # opentracker
       ];
       allowedUDPPorts = [
         51413 # transmission
@@ -119,6 +120,7 @@
         5353 47998 47999 48000 48002 48010 # moonlight
         51820 # wireguard
         5201 # iperf
+        6969 # opentracker
       ];
     };
   };
