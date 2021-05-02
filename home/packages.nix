@@ -16,6 +16,9 @@ with pkgs;
   exa
   bat
   tealdeer
+  fzf
+  skim
+  bottom
 
   nix-prefetch-github
 
