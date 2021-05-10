@@ -26,6 +26,7 @@ in {
         "type:touchpad" = {
           tap = "enabled";
           natural_scroll = "enabled";
+          dwt = "disabled";
         };
 
         "type:pointer" = {
