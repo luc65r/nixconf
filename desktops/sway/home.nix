@@ -71,6 +71,9 @@ in {
         "XF86AudioPause" = "exec mpc toggle";
         "XF86AudioPrev" = "exec mpc prev";
         "XF86AudioNext" = "exec mpc next";
+
+        "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
+        "Shift+Print" = "exec grim - | wl-copy";
       };
 
       bars = [];
@@ -125,5 +128,8 @@ in {
   home.packages = with pkgs; [
     bemenu
     mpc_cli
+    grim
+    slurp
+    wl-clipboard
   ];
 }
