@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "cyrel": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1620913634,
+        "narHash": "sha256-AHJ7XhCgjtA+g48NwLO3MPwGZn3/dL4HueqVUGqjeno=",
+        "ref": "master",
+        "rev": "163f03d91a479effeb9b06298ddc769662153f88",
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/Cyrel-org/cyrel-functions"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/Cyrel-org/cyrel-functions"
+      }
+    },
     "emacs": {
       "locked": {
         "lastModified": 1618972339,
@@ -84,6 +107,7 @@
     },
     "root": {
       "inputs": {
+        "cyrel": "cyrel",
         "emacs": "emacs",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",

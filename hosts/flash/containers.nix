@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, secrets, ... }:
 
 {
   containers = {
@@ -91,6 +91,15 @@
 
     tracker = {
       config = import ../../containers/tracker.nix;
+
+      ephemeral = true;
+      autoStart = true;
+    };
+
+    cyrel = {
+      config = import ../../containers/cyrel.nix {
+        inherit pkgs secrets;
+      };
 
       ephemeral = true;
       autoStart = true;
