@@ -35,13 +35,6 @@
       };
     };
 
-    stream = {
-      config = import ../../containers/stream.nix;
-
-      ephemeral = true;
-      autoStart = true;
-    };
-
     navidrome = {
       config = import ../../containers/navidrome.nix;
 
@@ -103,6 +96,20 @@
 
       ephemeral = true;
       autoStart = true;
+    };
+
+    nginx = {
+      config = import ../../containers/nginx.nix;
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/var/lib/acme/.lego/accounts/" = {
+          hostPath = "/srv/acme/.lego/accounts/";
+          isReadOnly = false;
+        };
+      };
     };
   };
 }

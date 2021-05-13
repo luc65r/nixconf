@@ -72,6 +72,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/acme" = {
+    device = "qto/acme";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";

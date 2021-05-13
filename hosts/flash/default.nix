@@ -104,6 +104,7 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
+        80 443
         51413 # transmission
         9091 # transmission rpc
         1935 # rtmp
@@ -115,6 +116,7 @@
         6969 # opentracker
       ];
       allowedUDPPorts = [
+        80 443
         51413 # transmission
         137 138 # samba
         5353 47998 47999 48000 48002 48010 # moonlight
