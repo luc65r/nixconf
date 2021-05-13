@@ -34,7 +34,7 @@
       };
 
       eisti = lib.recursiveUpdate (common "eisti") {
-        address = "lucas.ransan@eisti.eu";
+        address = "lucas.ransan@cy-tech.fr";
         realName = "Lucas Ransan";
         flavor = "gmail.com";
       };
