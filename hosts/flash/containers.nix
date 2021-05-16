@@ -111,5 +111,21 @@
         };
       };
     };
+
+    botCYeste = {
+      config = import ../../containers/botCYeste.nix {
+        inherit pkgs;
+      };
+
+      ephemeral = true;
+      autoStart = true;
+
+      bindMounts = {
+        "/srv/botCYeste" = {
+          hostPath = "/srv/botCYeste";
+          isReadOnly = false;
+        };
+      };
+    };
   };
 }

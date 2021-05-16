@@ -1,5 +1,29 @@
 {
   "nodes": {
+    "botCYeste": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "mozilla": "mozilla",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1621071083,
+        "narHash": "sha256-Dji+phGwlw1G8P67kFjD018gpv8JCUeZtQ5Ac+Byj2E=",
+        "owner": "luc65r",
+        "repo": "botCYeste",
+        "rev": "f54ad0838679ae0fd868bcc4923514ef5d16807d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luc65r",
+        "repo": "botCYeste",
+        "type": "github"
+      }
+    },
     "cyrel": {
       "inputs": {
         "flake-utils": [
@@ -89,6 +113,22 @@
         "type": "github"
       }
     },
+    "mozilla": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1603906276,
+        "narHash": "sha256-RsNPnEKd7BcogwkqhaV5kI/HuNC4flH/OQCC/4W5y/8=",
+        "owner": "mozilla",
+        "repo": "nixpkgs-mozilla",
+        "rev": "8c007b60731c07dd7a052cce508de3bb1ae849b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mozilla",
+        "repo": "nixpkgs-mozilla",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1621073999,
@@ -107,6 +147,7 @@
     },
     "root": {
       "inputs": {
+        "botCYeste": "botCYeste",
         "cyrel": "cyrel",
         "emacs": "emacs",
         "flake-utils": "flake-utils",

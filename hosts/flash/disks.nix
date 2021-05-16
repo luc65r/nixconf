@@ -77,6 +77,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/botCYeste" = {
+    device = "qto/botCYeste";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";

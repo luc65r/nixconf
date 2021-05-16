@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    botCYeste = {
+      url = "github:luc65r/botCYeste";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -33,6 +38,7 @@
     , flake-utils
     , secrets
     , cyrel
+    , botCYeste
     }: {
       nixosConfigurations = let
         defaultConfig = name: {
@@ -83,6 +89,7 @@
 
                 (_: _: {
                   cyrel = cyrel.defaultPackage."x86_64-linux";
+                  botCYeste = botCYeste.defaultPackage."x86_64-linux";
                 })
               ];
             }
