@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     virtmanager
     looking-glass-client
-    scream-receivers
+    scream
   ];
 
   virtualisation.libvirtd = {
