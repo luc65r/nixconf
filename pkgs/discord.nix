@@ -31,6 +31,7 @@ in stdenv.mkDerivation rec {
     libdrm
     libuuid
     libX11
+    libXdamage
     libXScrnSaver
     libXtst
     libxcb
