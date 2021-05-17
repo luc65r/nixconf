@@ -11,11 +11,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1621202148,
-        "narHash": "sha256-C7N0qaP4iwO6Sf9v3ABY6DkV3Yxce9vxCrAm9gc52vw=",
+        "lastModified": 1621260635,
+        "narHash": "sha256-YnsZeV6TFU0zxDYz/sUzSx5kVJbZvwkvEb6v+2IhLLU=",
         "owner": "luc65r",
         "repo": "botCYeste",
-        "rev": "a57cf76941367e192d2104d54ffbdd0a06d5e108",
+        "rev": "547ae8da374a39ed21dacdf5cef1a695d1c9fae0",
         "type": "github"
       },
       "original": {
