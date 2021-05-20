@@ -110,6 +110,7 @@
         1935 # rtmp
         4533 # navidrome
         445 139 # samba
+        8200 # dlna
         47984 47989 48010 # moonlight
         5201 # iperf
         5000 # znc
@@ -119,6 +120,7 @@
         80 443
         51413 # transmission
         137 138 # samba
+        1900 # dlna
         5353 47998 47999 48000 48002 48010 # moonlight
         51820 # wireguard
         5201 # iperf

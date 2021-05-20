@@ -19,8 +19,17 @@
     };
   };
 
+  services.minidlna = {
+    enable = true;
+    friendlyName = "flash";
+    announceInterval = 30;
+    mediaDirs = [
+      "V,/srv/torrent/Downloads"
+    ];
+  };
+
   networking.firewall = {
-    allowedTCPPorts = [ 445 139 ];
-    allowedUDPPorts = [ 137 138 ];
+    allowedTCPPorts = [ 445 139 8200 ];
+    allowedUDPPorts = [ 137 138 1900 ];
   };
 }
