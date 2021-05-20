@@ -5,6 +5,7 @@
     enable = true;
 
     settings = {
+      live_config_reload = false;
       cursor.style = "Beam";
       window.padding = { x = 5; y = 5; };
       font = {
