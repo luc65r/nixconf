@@ -3,6 +3,7 @@
 {
   services.samba = {
     enable = true;
+    enableNmbd = true;
     extraConfig = ''
       guest account = nobody
       map to guest = bad user
