@@ -16,4 +16,9 @@
     enable = true;
     package = pkgs.ungoogled-chromium;
   };
+
+  xdg.mimeApps.defaultApplications."default-web-browser" = [
+    "firefox.desktop"
+    "chromium-browser.desktop"
+  ];
 }

@@ -28,5 +28,11 @@
     enableNixDirenvIntegration = true;
   };
 
-  home.stateVersion = "21.03";
+  xdg = {
+    enable = true;
+    mime.enable = true;
+    mimeApps.enable = true;
+  };
+
+  home.stateVersion = "21.05";
 }
