@@ -12,11 +12,11 @@ let
   desktopName = "Discord";
 in stdenv.mkDerivation rec {
   pname = "discord-wayland";
-  version = "0.0.14";
+  version = "0.0.15";
 
   src = fetchurl {
     url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-    sha256 = "1rq490fdl5pinhxk8lkfcfmfq7apj79jzf3m14yql1rc9gpilrf2";
+    sha256 = "re3pVOnGltluJUdZtTlSeiSrHULw1UjFxDCdGj/Dwl4=";
   };
 
   buildInputs = [
