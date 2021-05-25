@@ -77,6 +77,10 @@ in {
       };
 
       bars = [];
+
+      startup = [
+        { command = "mako"; }
+      ];
     };
   };
 
