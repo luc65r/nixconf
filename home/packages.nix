@@ -19,6 +19,10 @@ with pkgs;
   fzf
   skim
   bottom
+  file
+  dnsutils
+  usbutils
+  pciutils
 
   nix-prefetch-github
 
