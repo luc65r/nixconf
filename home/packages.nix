@@ -32,6 +32,7 @@ with pkgs;
    then discord-wayland
    else discord)
   teams
+  element-desktop
 
   libreoffice-fresh
   texlive.combined.scheme-full
