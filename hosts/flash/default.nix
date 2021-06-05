@@ -64,12 +64,12 @@
       ipv4.addresses = [
         { address = "192.168.0.10"; prefixLength = 24; }
       ];
-      ipv6.addresses = [
-        { address = "2a01:cb19:86ed:f600::10"; prefixLength = 56; }
-      ];
+      # ipv6.addresses = [
+      #   { address = "2a01:cb19:86ed:f600::10"; prefixLength = 56; }
+      # ];
     };
     defaultGateway = { address = "192.168.0.1"; interface = "br0"; };
-    defaultGateway6 = { address = "2a01:cb19:86ed:f600:46a6:1eff:fe80:c516"; interface = "br0"; };
+    # defaultGateway6 = { address = "2a01:cb19:86ed:f600:46a6:1eff:fe80:c516"; interface = "br0"; };
     nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
 
     bridges = {
