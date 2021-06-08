@@ -18,4 +18,8 @@
       rpc-host-whitelist-enabled = false;
     };
   };
+
+  networking.firewall.allowedTCPPorts = [
+    9091 # rpc
+  ];
 }

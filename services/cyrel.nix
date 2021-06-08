@@ -27,4 +27,10 @@ in {
     createHome = true;
     inherit home;
   };
+
+  services.nginx.virtualHosts."cyrel.ransan.tk" = {
+    enableACME = true;
+    addSSL = true;
+    locations."/".proxyPass = "http://localhost:8040";
+  };
 }

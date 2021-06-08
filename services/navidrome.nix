@@ -36,4 +36,10 @@ in {
     inherit home;
     createHome = true;
   };
+
+  services.nginx.virtualHosts."music.ransan.tk" = {
+    enableACME = true;
+    addSSL = true;
+    locations."/".proxyPass = "http://localhost:4533";
+  };
 }
