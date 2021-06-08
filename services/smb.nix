@@ -26,6 +26,9 @@
     mediaDirs = [
       "V,/srv/torrent/Downloads"
     ];
+    extraConfig = ''
+      network_interface=br0
+    '';
   };
 
   networking.firewall = {
