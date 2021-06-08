@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 let
-  home = "/home/navidrome";
+  home = "/srv/navidrome";
   configFile = (pkgs.formats.toml {}).generate "navidrome.toml" {
-    MusicFolder = "${home}/music";
+    MusicFolder = "/srv/music";
     DataFolder = "${home}/data";
   };
 
@@ -33,10 +33,7 @@ in {
   };
 
   users.users.navidrome = {
-    uid = 90;
     inherit home;
     createHome = true;
   };
-
-  users.groups.navidrome.gid = 90;
 }

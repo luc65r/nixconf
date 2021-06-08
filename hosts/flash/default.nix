@@ -4,9 +4,16 @@
   imports = [
     ./disks.nix
     ./fonts.nix
-    ./containers.nix
     ./virt.nix
     ../../desktops
+
+    ../../services/botCYeste.nix
+    ../../services/cyrel.nix
+    ../../services/navidrome.nix
+    ../../services/nginx.nix
+    ../../services/smb.nix
+    ../../services/torrent.nix
+    ../../services/tracker.nix
   ];
 
   boot = {

@@ -72,7 +72,7 @@
     fsType = "zfs";
   };
 
-  fileSystems."/srv/acme" = {
+  fileSystems."/var/lib/acme/.lego/accounts" = {
     device = "qto/acme";
     fsType = "zfs";
   };

@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 {
   systemd.services.botCYeste = {
@@ -16,7 +16,6 @@
   };
 
   users.users.cyeste = {
-    uid = 999;
     isSystemUser = true;
   };
 }

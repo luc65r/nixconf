@@ -1,4 +1,4 @@
-{ pkgs, secrets }:
+{ pkgs, secrets, ... }:
 
 let
   home = "/var/cyrel";

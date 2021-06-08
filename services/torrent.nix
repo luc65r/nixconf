@@ -3,7 +3,7 @@
 {
   services.transmission = {
     enable = true;
-    home = "/home/transmission";
+    home = "/srv/torrent";
     openFirewall = true;
     downloadDirPermissions = "775";
     port = 9091;
