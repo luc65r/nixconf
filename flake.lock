@@ -11,11 +11,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1621263435,
-        "narHash": "sha256-09XfzQ4Hc7I3/4/9PmDD8RAeU5uU7fD7tPy4hGW11vY=",
+        "lastModified": 1623249018,
+        "narHash": "sha256-CThRMT5WaCfAFrQkv7iUXwi/X5FMa3mTxUowSiGJdsk=",
         "owner": "luc65r",
         "repo": "botCYeste",
-        "rev": "e51003afc5ca227e6d820de0f5ea664767d5e84b",
+        "rev": "a86831dd3ff924bc5c49d347646a207a12f34833",
         "type": "github"
       },
       "original": {
@@ -49,11 +49,11 @@
     },
     "emacs": {
       "locked": {
-        "lastModified": 1622886185,
-        "narHash": "sha256-6LaRFvKMczOpwleBNUbVrrArN6WB11mUbQWpsgqSjcU=",
+        "lastModified": 1623229417,
+        "narHash": "sha256-UtFitQ/fSsZph9D/wSCNYLEQCGOmzNLcz6Aw05kXVzA=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "4304defaa2d64bac6fcf20cfcfac65198174e33b",
+        "rev": "f5cf6e9e137b775e9f3e9fab472222e5cbb93518",
         "type": "github"
       },
       "original": {
@@ -84,11 +84,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1622753049,
-        "narHash": "sha256-clDbg4Lg4RGHJnGBLi2jp5kV4+01P42dAYB0imNmrhU=",
+        "lastModified": 1623103231,
+        "narHash": "sha256-ns6p4FYqdMHmcaZZjNC1HhxApfxKlpAPbvbOzhiLbas=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "45f9cb06a9152ca367edc3e7eaa5449338885167",
+        "rev": "aa36e2d6b481a54b95fbddbecb76076e0f38eb89",
         "type": "github"
       },
       "original": {
@@ -116,26 +116,27 @@
     "mozilla": {
       "flake": false,
       "locked": {
-        "lastModified": 1603906276,
-        "narHash": "sha256-RsNPnEKd7BcogwkqhaV5kI/HuNC4flH/OQCC/4W5y/8=",
-        "owner": "mozilla",
+        "lastModified": 1612892239,
+        "narHash": "sha256-jwrdJvaDl+kCRH3LFYuL9KweXO7fCTXxLovKja6xqbk=",
+        "owner": "andersk",
         "repo": "nixpkgs-mozilla",
-        "rev": "8c007b60731c07dd7a052cce508de3bb1ae849b4",
+        "rev": "3499e085fb6ae1a846bcf425fa9c98a3b77480da",
         "type": "github"
       },
       "original": {
-        "owner": "mozilla",
+        "owner": "andersk",
+        "ref": "stdenv.lib",
         "repo": "nixpkgs-mozilla",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1622545032,
-        "narHash": "sha256-1Y+2LFqnMBEH9OZzMBdLWl6GWFt/xzNz0V5X+m05Ing=",
+        "lastModified": 1622966049,
+        "narHash": "sha256-6g+28v94ISkVk9TBSsITVOnB2slK8plieWPIF2jo/l0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1c2986bbb806c57f9470bf3231d8da7250ab9091",
+        "rev": "fbfb79400a08bf754e32b4d4fc3f7d8f8055cf94",
         "type": "github"
       },
       "original": {
