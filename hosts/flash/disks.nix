@@ -82,6 +82,16 @@
     fsType = "zfs";
   };
 
+  fileSystems."/var/lib/prometheus" = {
+    device = "qto/prometheus";
+    fsType = "zfs";
+  };
+
+  fileSystems."/var/lib/grafana" = {
+    device = "qto/grafana";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";

@@ -11,6 +11,7 @@
     ../../services/cyrel.nix
     ../../services/navidrome.nix
     ../../services/nginx.nix
+    ../../services/prometheus.nix
     ../../services/smb.nix
     ../../services/stream.nix
     ../../services/torrent.nix
