@@ -45,7 +45,9 @@ with pkgs;
   brightnessctl
   pulsemixer
 
-  steam
+  (steam.override {
+    extraLibraries = pkgs: [ pkgs.pipewire ];
+  })
   moonlight-qt
   zoom-us
 
