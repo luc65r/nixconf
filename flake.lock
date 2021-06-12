@@ -34,11 +34,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1620913634,
-        "narHash": "sha256-AHJ7XhCgjtA+g48NwLO3MPwGZn3/dL4HueqVUGqjeno=",
+        "lastModified": 1623514861,
+        "narHash": "sha256-rEEer2Ixa/xzSZe1V4Hi5fl0GoBq9uhWruwxV4Y4R98=",
         "ref": "master",
-        "rev": "163f03d91a479effeb9b06298ddc769662153f88",
-        "revCount": 3,
+        "rev": "f218879590ff808cf8181db46364ee28ec1af002",
+        "revCount": 4,
         "type": "git",
         "url": "ssh://git@github.com/Cyrel-org/cyrel-functions"
       },
