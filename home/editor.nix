@@ -82,7 +82,14 @@
       nasm-mode
       znc
       vala-mode
-      parinfer-rust-mode
+      (parinfer-rust-mode.overrideAttrs (old: {
+        postPatch = ''
+          ${pkgs.perl}/bin/perl -0777pi \
+              -e 's,\(concat[^()]+user-emacs-directory[^()]+"parinfer-rust/"\),"${pkgs.parinfer-rust}/lib/",gs' \
+              parinfer-rust-mode.el
+          sed -i 's,"parinfer-rust-linux.so","libparinfer_rust.so",g' parinfer-rust-mode.el
+        '';
+      }))
       geiser
       geiser-guile
       geiser-chibi
