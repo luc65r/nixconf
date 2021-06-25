@@ -82,6 +82,10 @@
       nasm-mode
       znc
       vala-mode
+      parinfer-rust-mode
+      geiser
+      geiser-guile
+      geiser-chibi
     ];
   };
 }
