@@ -35,6 +35,15 @@ in {
         };
       };
 
+      output = {
+        "eDP-1" = {
+          position = "0 0";
+        };
+        "HDMI-A-1" = {
+          position = "0 -1080";
+        };
+      };
+
       modifier = "Mod4";
 
       keybindings = lib.mkOptionDefault {
