@@ -94,6 +94,7 @@
       geiser-guile
       geiser-chibi
       myrddin-mode
+      v-mode
     ];
   };
 }
