@@ -130,6 +130,8 @@
     ];
   };
 
+  hardware.wooting.enable = true;
+
   users = {
     mutableUsers = false;
 
