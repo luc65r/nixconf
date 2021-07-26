@@ -5,7 +5,6 @@
     ./disks.nix
     ./fonts.nix
     ./virt.nix
-    ../../desktops
 
     ../../services/botCYeste.nix
     ../../services/cyrel.nix
@@ -132,9 +131,9 @@
     openFirewall = true;
   };
 
-  sound.enable = true;
+  sound.enable = false;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -142,7 +141,7 @@
   };
 
   hardware.opengl = {
-    enable = true;
+    enable = false;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       amdvlk # Vulkan
