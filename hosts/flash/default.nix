@@ -30,6 +30,7 @@
     initrd.availableKernelModules = [ "vfio-pci" ];
     kernelParams = [
       "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0"
+      "video=vesafb:off" "video=efifb:off"
       # Reserve 8GB for the vm
       "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
     ];
