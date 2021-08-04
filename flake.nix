@@ -4,9 +4,13 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-21.05";
-    home-manager = {
+    home-manager-unstable = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-21.05";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
     emacs.url = "github:nix-community/emacs-overlay";
     impermanence = {
@@ -34,7 +38,8 @@
     { self
     , nixpkgs-unstable
     , nixpkgs-stable
-    , home-manager
+    , home-manager-unstable
+    , home-manager-stable
     , emacs
     , impermanence
     , flake-utils
@@ -46,6 +51,7 @@
         defaultConfig =
           { name
           , nixpkgs
+          , home-manager
           }: {
             system = "x86_64-linux";
 
@@ -105,6 +111,7 @@
           (nixpkgs-unstable.lib.recursiveUpdate (defaultConfig {
             name = "sally";
             nixpkgs = nixpkgs-unstable;
+            home-manager = home-manager-unstable;
           }) {
             specialArgs.host.type = "laptop";
           });
@@ -113,6 +120,7 @@
           (nixpkgs-stable.lib.recursiveUpdate (defaultConfig {
             name = "flash";
             nixpkgs = nixpkgs-stable;
+            home-manager = home-manager-stable;
           }) {
           });
       };
