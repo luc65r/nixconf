@@ -23,7 +23,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
 
     extraModulePackages = with config.boot.kernelPackages; [ zenpower v4l2loopback ];
     initrd.availableKernelModules = [ "vfio-pci" ];
