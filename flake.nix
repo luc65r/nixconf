@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-21.05";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
     emacs.url = "github:nix-community/emacs-overlay";
     impermanence = {
       url = "github:nix-community/impermanence";
@@ -22,16 +18,6 @@
       url = "git+file:///home/lucas/nixsecrets";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    cyrel = {
-      url = "git+ssh://git@github.com/Cyrel-org/cyrel-functions";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    botCYeste = {
-      url = "github:luc65r/botCYeste";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs =
@@ -39,34 +25,32 @@
     , nixpkgs-unstable
     , nixpkgs-stable
     , home-manager-unstable
-    , home-manager-stable
     , emacs
     , impermanence
     , flake-utils
     , secrets
-    , cyrel
-    , botCYeste
     }: {
       nixosConfigurations = let
         defaultConfig =
           { name
+          , type
           , nixpkgs
-          , home-manager
+          , home-manager ? null
           }: {
             system = "x86_64-linux";
 
             specialArgs = {
               host = {
-                inherit name;
-                type = "desktop";
+                inherit name type;
                 keymap = "bepo";
-                wm = "sway";
+                wm = if type != null then "gnome" else null;
               };
 
               inherit (secrets) secrets;
             };
 
             modules = [
+              ./hosts/generic
               (./hosts + "/${name}")
               {
                 system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
@@ -74,7 +58,7 @@
               }
 
               (import "${impermanence}/nixos.nix")
-
+            ] ++ nixpkgs.lib.optionals (type != "server") [
               home-manager.nixosModules.home-manager
               ({ host, secrets, ... }: {
                 options.home-manager.users = with nixpkgs.lib; mkOption {
@@ -97,11 +81,6 @@
               {
                 nixpkgs.overlays = [
                   emacs.overlay
-
-                  (_: _: {
-                    cyrel = cyrel.defaultPackage."x86_64-linux";
-                    botCYeste = botCYeste.defaultPackage."x86_64-linux";
-                  })
                 ];
               }
             ];
@@ -110,17 +89,17 @@
         sally = nixpkgs-unstable.lib.nixosSystem
           (nixpkgs-unstable.lib.recursiveUpdate (defaultConfig {
             name = "sally";
+            type = "laptop";
             nixpkgs = nixpkgs-unstable;
             home-manager = home-manager-unstable;
           }) {
-            specialArgs.host.type = "laptop";
           });
 
         flash = nixpkgs-stable.lib.nixosSystem
           (nixpkgs-stable.lib.recursiveUpdate (defaultConfig {
             name = "flash";
+            type = "server";
             nixpkgs = nixpkgs-stable;
-            home-manager = home-manager-stable;
           }) {
           });
       };

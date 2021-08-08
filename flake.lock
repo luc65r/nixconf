@@ -1,52 +1,5 @@
 {
   "nodes": {
-    "botCYeste": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "mozilla": "mozilla",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1623249018,
-        "narHash": "sha256-CThRMT5WaCfAFrQkv7iUXwi/X5FMa3mTxUowSiGJdsk=",
-        "owner": "luc65r",
-        "repo": "botCYeste",
-        "rev": "a86831dd3ff924bc5c49d347646a207a12f34833",
-        "type": "github"
-      },
-      "original": {
-        "owner": "luc65r",
-        "repo": "botCYeste",
-        "type": "github"
-      }
-    },
-    "cyrel": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1623514861,
-        "narHash": "sha256-rEEer2Ixa/xzSZe1V4Hi5fl0GoBq9uhWruwxV4Y4R98=",
-        "ref": "master",
-        "rev": "f218879590ff808cf8181db46364ee28ec1af002",
-        "revCount": 4,
-        "type": "git",
-        "url": "ssh://git@github.com/Cyrel-org/cyrel-functions"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/Cyrel-org/cyrel-functions"
-      }
-    },
     "emacs": {
       "locked": {
         "lastModified": 1628099055,
@@ -74,27 +27,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "home-manager-stable": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1627649712,
-        "narHash": "sha256-AJBasvMKpsyJmCLdjroBElCHY5AlalbVy+XY5vjbgXc=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "b39647e52ed3c0b989e9d5c965e598ae4c38d7ef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "release-21.05",
-        "repo": "home-manager",
         "type": "github"
       }
     },
@@ -134,23 +66,6 @@
         "type": "github"
       }
     },
-    "mozilla": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1612892239,
-        "narHash": "sha256-jwrdJvaDl+kCRH3LFYuL9KweXO7fCTXxLovKja6xqbk=",
-        "owner": "andersk",
-        "repo": "nixpkgs-mozilla",
-        "rev": "3499e085fb6ae1a846bcf425fa9c98a3b77480da",
-        "type": "github"
-      },
-      "original": {
-        "owner": "andersk",
-        "ref": "stdenv.lib",
-        "repo": "nixpkgs-mozilla",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1627892869,
@@ -185,11 +100,8 @@
     },
     "root": {
       "inputs": {
-        "botCYeste": "botCYeste",
-        "cyrel": "cyrel",
         "emacs": "emacs",
         "flake-utils": "flake-utils",
-        "home-manager-stable": "home-manager-stable",
         "home-manager-unstable": "home-manager-unstable",
         "impermanence": "impermanence",
         "nixpkgs-stable": "nixpkgs-stable",
