@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   services.xserver = {
@@ -11,4 +11,8 @@
   };
 
   hardware.pulseaudio.enable = lib.mkForce (!config.services.pipewire.pulse.enable);
+
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    appindicator
+  ];
 }
