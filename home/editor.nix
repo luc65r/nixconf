@@ -41,7 +41,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacsPgtkGcc;
     extraPackages = epkgs: with epkgs; [
       magit
       nix-mode
