@@ -6,7 +6,7 @@
   ];
 
   services.xserver = {
-    enable = false;
+    enable = true;
     layout = if host.keymap == "bepo" then "fr" else host.keymap;
     xkbVariant = lib.mkIf (host.keymap == "bepo") "bepo";
     xkbOptions = lib.mkIf (host.keymap == "bepo") "ctrl:swapcaps";
