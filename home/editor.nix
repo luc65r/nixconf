@@ -100,4 +100,14 @@
       cmake-font-lock
     ];
   };
+
+  services.emacs = {
+    enable = true;
+    client.enable = true;
+    socketActivation.enable = true;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "emacsclient";
+  };
 }

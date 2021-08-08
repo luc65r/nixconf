@@ -14,9 +14,5 @@
     };
 
     ignores = [ "*~" ];
-
-    extraConfig = {
-      core.editor = "vim";
-    };
   };
 }

@@ -5,7 +5,6 @@
     ./git.nix
     ./editor.nix
     ./shell.nix
-    ./editor.nix
     ./rofi.nix
     ./font.nix
     ./terminal.nix
