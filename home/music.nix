@@ -20,5 +20,6 @@
 
   home.packages = with pkgs; [
     mpc_cli
+    sublime-music
   ];
 }
