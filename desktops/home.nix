@@ -4,8 +4,8 @@
   imports = [
     (./. + "/${host.wm}/home.nix")
   ];
-
-  xsession.enable = host.wm != "sway";
+/*
+  xsession.enable = false;
 
   gtk = {
     enable = true;
@@ -38,4 +38,5 @@
       name = "Dracula";
     };
   };
+*/
 }

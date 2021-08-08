@@ -3,13 +3,12 @@
 {
   programs.firefox = {
     enable = true;
-    package = lib.mkIf (host.wm == "sway")
-      (with pkgs; wrapFirefox (firefox-unwrapped.override {
-        webrtcSupport = true;
-        pipewireSupport = true;
-      }) {
-        forceWayland = true;
-      });
+    package = with pkgs; wrapFirefox (firefox-unwrapped.override {
+      webrtcSupport = true;
+      pipewireSupport = true;
+    }) {
+      forceWayland = true;
+    };
   };
 
   programs.chromium = {

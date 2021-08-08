@@ -28,9 +28,7 @@ with pkgs;
 
   ktouch
 
-  (if host.wm == "sway"
-   then discord-wayland
-   else discord)
+  discord-wayland
   teams
   element-desktop
 
