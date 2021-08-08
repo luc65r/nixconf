@@ -2,7 +2,14 @@
 
 {
   services.xserver = {
-    desktopManager.gnome.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        [org.gnome.desktop.peripherals.mouse]
+        middle-click-emulation=true
+        accel-profile='flat'
+      '';
+    };
     displayManager.gdm.enable = true;
   };
 
