@@ -28,7 +28,7 @@
       allow-loopback-pinentry
     '';
 
-    defaultCacheTtl = if host.type == "laptop" then 30 * 60 else 24 * 60 * 60;
+    defaultCacheTtl = 24 * 60 * 60;
     maxCacheTtl = 8 * defaultCacheTtl;
     defaultCacheTtlSsh = defaultCacheTtl;
     maxCacheTtlSsh = maxCacheTtl;
