@@ -31,6 +31,7 @@ with pkgs;
   discord-wayland
   teams
   element-desktop
+  signal-desktop
 
   libreoffice-fresh
   texlive.combined.scheme-full
