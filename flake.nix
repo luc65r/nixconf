@@ -40,7 +40,7 @@
           { name
           , type
           , nixpkgs
-          , home-manager ? null
+          , home-manager
           }: {
             system = "x86_64-linux";
 
@@ -104,6 +104,7 @@
             name = "flash";
             type = "server";
             nixpkgs = nixpkgs-stable;
+            home-manager = home-manager-unstable;
           }) {
           });
       };
