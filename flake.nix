@@ -4,16 +4,21 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-21.05";
-    home-manager-unstable = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    emacs.url = "github:nix-community/emacs-overlay";
+
     impermanence = {
       url = "github:nix-community/impermanence";
       flake = false;
     };
+
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    emacs.url = "github:nix-community/emacs-overlay";
+
     flake-utils.url = "github:numtide/flake-utils";
+
     secrets = {
       url = "git+file:///home/lucas/nixsecrets";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -58,7 +63,6 @@
               }
 
               (import "${impermanence}/nixos.nix")
-            ] ++ nixpkgs.lib.optionals (type != "server") [
               home-manager.nixosModules.home-manager
               ({ host, secrets, ... }: {
                 options.home-manager.users = with nixpkgs.lib; mkOption {
@@ -77,7 +81,7 @@
                   users.lucas = import ./home;
                 };
               }
-
+            ] ++ nixpkgs.lib.optionals (type != "server") [
               {
                 nixpkgs.overlays = [
                   emacs.overlay

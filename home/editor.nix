@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 
 {
   programs.neovim = {
@@ -40,7 +40,7 @@
   };
 
   programs.emacs = {
-    enable = true;
+    enable = host.type != "server";
     package = pkgs.emacsPgtkGcc;
     extraPackages = epkgs: with epkgs; [
       magit
@@ -102,12 +102,12 @@
   };
 
   services.emacs = {
-    enable = true;
+    enable = host.type != "server";
     client.enable = true;
     socketActivation.enable = true;
   };
 
   home.sessionVariables = {
-    EDITOR = "emacsclient";
+    EDITOR = if host.type == "server" then "vim" else "emacsclient";
   };
 }
