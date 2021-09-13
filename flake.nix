@@ -2,8 +2,10 @@
   description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     impermanence = {
       url = "github:nix-community/impermanence";
@@ -17,23 +19,28 @@
 
     emacs.url = "github:nix-community/emacs-overlay";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
     secrets = {
       url = "git+file:///home/lucas/nixsecrets";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    botCYeste = {
+      url = "github:luc65r/botCYeste";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
 
   outputs =
     { self
-    , nixpkgs-unstable
+    , flake-utils
     , nixpkgs-stable
+    , nixpkgs-unstable
+    , impermanence
     , home-manager-unstable
     , emacs
-    , impermanence
-    , flake-utils
     , secrets
+    , botCYeste
     }: {
       nixosConfigurations = let
         defaultConfig =
@@ -41,7 +48,7 @@
           , type
           , nixpkgs
           , home-manager
-          }: {
+          }: rec {
             system = "x86_64-linux";
 
             specialArgs = {
@@ -81,9 +88,12 @@
                   users.lucas = import ./home;
                 };
               }
-            ] ++ nixpkgs.lib.optionals (type != "server") [
               {
-                nixpkgs.overlays = [
+                nixpkgs.overlays = if type == "server" then [
+                  (_: _: {
+                    botCYeste = botCYeste.defaultPackage.${system};
+                  })
+                ] else [
                   emacs.overlay
                 ];
               }

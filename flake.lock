@@ -1,5 +1,29 @@
 {
   "nodes": {
+    "botCYeste": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "mozilla": "mozilla",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1623249018,
+        "narHash": "sha256-CThRMT5WaCfAFrQkv7iUXwi/X5FMa3mTxUowSiGJdsk=",
+        "owner": "luc65r",
+        "repo": "botCYeste",
+        "rev": "a86831dd3ff924bc5c49d347646a207a12f34833",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luc65r",
+        "repo": "botCYeste",
+        "type": "github"
+      }
+    },
     "emacs": {
       "locked": {
         "lastModified": 1631553815,
@@ -66,6 +90,23 @@
         "type": "github"
       }
     },
+    "mozilla": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612892239,
+        "narHash": "sha256-jwrdJvaDl+kCRH3LFYuL9KweXO7fCTXxLovKja6xqbk=",
+        "owner": "andersk",
+        "repo": "nixpkgs-mozilla",
+        "rev": "3499e085fb6ae1a846bcf425fa9c98a3b77480da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andersk",
+        "ref": "stdenv.lib",
+        "repo": "nixpkgs-mozilla",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1631452463,
@@ -100,6 +141,7 @@
     },
     "root": {
       "inputs": {
+        "botCYeste": "botCYeste",
         "emacs": "emacs",
         "flake-utils": "flake-utils",
         "home-manager-unstable": "home-manager-unstable",
