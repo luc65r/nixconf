@@ -39,6 +39,8 @@
       "video=vesafb:off" "video=efifb:off"
       # Reserve 8GB for the vm
       "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
+      # Reboot if panic
+      "panic=1"
     ];
     kernelModules = [ "zenpower" "kvm-amd" "vfio-pci" ];
     blacklistedKernelModules = [ "k10temp" "nouveau" ];
