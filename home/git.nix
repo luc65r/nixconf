@@ -14,5 +14,10 @@
     };
 
     ignores = [ "*~" ];
+
+    extraConfig = {
+      init.defaultBranch = "master";
+      pull.ff = "only";
+    };
   };
 }
