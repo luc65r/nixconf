@@ -29,6 +29,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.flake-utils.follows = "flake-utils";
     };
+
+    cyrel.url = "github:alyrow/cyrel";
   };
 
   outputs =
@@ -41,6 +43,7 @@
     , emacs
     , secrets
     , botCYeste
+    , cyrel
     }: {
       nixosConfigurations = let
         defaultConfig =
@@ -92,6 +95,7 @@
                 nixpkgs.overlays = if type == "server" then [
                   (_: _: {
                     botCYeste = botCYeste.defaultPackage.${system};
+                    cyrel = cyrel.defaultPackage.${system};
                   })
                 ] else [
                   emacs.overlay

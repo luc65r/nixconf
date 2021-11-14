@@ -7,8 +7,10 @@
     ./virt.nix
 
     ../../services/botCYeste.nix
+    ../../services/cyrel.nix
     ../../services/navidrome.nix
     ../../services/nginx.nix
+    ../../services/postgres.nix
     ../../services/prometheus.nix
     ../../services/smb.nix
     ../../services/stream.nix

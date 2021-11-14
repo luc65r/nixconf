@@ -92,6 +92,21 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/cyrel" = {
+    device = "qto/cyrel";
+    fsType = "zfs";
+  };
+
+  fileSystems."/var/lib/postgres" = {
+    device = "qto/postgres";
+    fsType = "zfs";
+  };
+
+  fileSystems."/var/backup" = {
+    device = "qto/backup";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
