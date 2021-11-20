@@ -3,7 +3,7 @@
 {
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_14;
+    package = pkgs.postgresql_13;
   };
 
   services.postgresqlBackup = {
