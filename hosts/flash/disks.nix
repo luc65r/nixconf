@@ -97,7 +97,7 @@
     fsType = "zfs";
   };
 
-  fileSystems."/var/lib/postgres" = {
+  fileSystems."/var/lib/postgresql" = {
     device = "qto/postgres";
     fsType = "zfs";
   };
