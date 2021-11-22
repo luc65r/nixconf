@@ -12,7 +12,7 @@ let
 
   cyrel_env = builtins.listToAttrs
     (mapAttrsToListRecursive (k: v: {
-      name = builtins.concatStringSep "_" (map lib.toUpper k);
+      name = builtins.concatStringsSep "_" (map lib.toUpper k);
       value = toString v;
     }) secrets.cyrel);
 in {
