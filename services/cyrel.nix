@@ -15,13 +15,17 @@ let
       name = builtins.concatStringsSep "_" (map lib.toUpper k);
       value = toString v;
     }) secrets.cyrel);
+
+  port = 3030;
 in {
   systemd.services.cyrel = {
     description = "Cyrel";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
 
-    environment = cyrel_env;
+    environment = cyrel_env // {
+      PORT = toString port;
+    };
 
     serviceConfig = {
       Type = "simple";
@@ -30,6 +34,12 @@ in {
       User = "cyrel";
       WorkingDirectory = "/srv/cyrel";
     };
+  };
+
+  services.nginx.virtualHosts."cyrel.ransan.tk" = {
+    enableACME = true;
+    addSSL = true;
+    locations."/".proxyPass = "http://localhost:${toString port}";
   };
 
   systemd.services.cyrel-sync = {
