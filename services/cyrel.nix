@@ -1,12 +1,20 @@
-{ pkgs, secrets, ... }:
+{ pkgs, lib, secrets, ... }:
 
 let
-  cyrel_env = with secrets.cyrel; {
-    CELCAT_USERNAME = celcat.username;
-    CELCAT_PASSWORD = celcat.password;
-    JWT_SECRET = jwt.secret;
-    DATABASE_URL = "postgres://cyrel@localhost/cyrel";
-  };
+  mapAttrsToListRecursive = with lib; f: set: let
+    recurse = path: set: let
+      g = k: v:
+        if isAttrs v
+        then recurse (path ++ [k]) v
+        else f (path ++ [k]) v;
+    in concatMap (x: if isList x then x else [x]) (mapAttrsToList g set);
+  in recurse [] set;
+
+  cyrel_env = builtins.listToAttrs
+    (mapAttrsToListRecursive (k: v: {
+      name = builtins.concatStringSep "_" (map lib.toUpper k);
+      value = toString v;
+    }) secrets.cyrel);
 in {
   systemd.services.cyrel = {
     description = "Cyrel";
