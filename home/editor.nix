@@ -98,6 +98,8 @@
       lua-mode
       cmake-mode
       cmake-font-lock
+      scala-mode
+      sbt-mode
     ];
   };
 
