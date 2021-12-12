@@ -100,6 +100,7 @@
       cmake-font-lock
       scala-mode
       sbt-mode
+      llvm-mode
     ];
   };
 
