@@ -58,7 +58,7 @@
               host = {
                 inherit name type;
                 keymap = "bepo";
-                wm = if type != null then "gnome" else null;
+                wm = if type != null then "river" else null;
               };
 
               inherit (secrets) secrets;
