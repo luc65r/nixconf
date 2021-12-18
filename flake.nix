@@ -99,6 +99,7 @@
                   })
                 ] else [
                   emacs.overlay
+                  (import ./overlays/gtk.nix)
                 ];
               }
             ];

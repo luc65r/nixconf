@@ -41,7 +41,9 @@
 
   programs.emacs = {
     enable = host.type != "server";
-    package = pkgs.emacsPgtkGcc;
+    package = pkgs.emacsPgtkGcc.override {
+      gtk3-x11 = pkgs.gtk3-xdg-decoration;
+    };
     extraPackages = epkgs: with epkgs; [
       magit
       nix-mode
