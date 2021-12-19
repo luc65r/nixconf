@@ -4,15 +4,15 @@
 
 ** Rebuild the system
 
-   #+begin_src shell
-     sudo nixos-rebuild --flakes . switch
-   #+end_src
+#+begin_src shell
+  sudo nixos-rebuild --flakes . switch
+#+end_src
 
 ** Update flake.lock
 
-   #+begin_src shell
-     nix flake update --commit-lock-file --recreate-lock-file
-   #+end_src
+#+begin_src shell
+  nix flake update --commit-lock-file
+#+end_src
 
 * Devices
 
@@ -21,34 +21,35 @@
 My 2020 Slimbook Pro X AMD with blank keycaps
 - Usage: 2020 -
 - CPU: Ryzen 7 4800H
-- RAM: 16GB @ 3200GHz
-- SSD: 256GB (that's not a lot)
+- RAM: 16 GB @ 3200 GHz
+- SSD: 256 GB (that's not a lot)
 - Keymap: bépo
-- WM: sway
+- WM: river
 - Editor: emacs
 
 ** Flash
 
 - Usage: 2018 -
-- CPU: Ryzen 7 1700 @ 4Ghz
-- RAM: 48GB @ 3000MHz
-- SSD: 256GB
-- Keymap: bépo
-- WM: i3
-- Editor: emacs
-
+- CPU: Ryzen 7 1700 @ 4 Ghz
+- RAM: 48 GB @ 3000 MHz
+- SSD: 256 GB
+- Disks:
+  - 2 * 4 TB on ZFS in mirror
+  - 1.5 TB + 2 TB on ZFS
+  - 512 GB 2.5' 5400 RPM for W10 VM
+  
 
 * My nixsecrets repo
 
-  Here is what ~flake.nix~ looks like:
-  #+begin_src nix
-    {
-      description = "My NixOS secrets";
+Here is what ~flake.nix~ looks like:
+#+begin_src nix
+  {
+    description = "My NixOS secrets";
 
-      outputs = { self, nixpkgs }: {
-	secrets = with nixpkgs.lib; foldl (r: f: recursiveUpdate r (import f)) {} [
-	  /* paths to attribute sets */
-	];
-      };
-    }
-  #+end_src
+    outputs = { self, nixpkgs }: {
+      secrets = with nixpkgs.lib; foldl (r: f: recursiveUpdate r (import f)) {} [
+        /* paths to attribute sets */
+      ];
+    };
+  }
+#+end_src
