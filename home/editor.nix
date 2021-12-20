@@ -47,7 +47,7 @@
     extraPackages = epkgs: with epkgs; [
       magit
       nix-mode
-      dracula-theme
+      nord-theme
       haskell-mode
       pdf-tools
       rg
