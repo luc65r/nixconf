@@ -14,7 +14,6 @@ with pkgs;
   fd
   jq
   exa
-  bat
   tealdeer
   fzf
   skim

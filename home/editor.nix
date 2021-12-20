@@ -1,6 +1,13 @@
 { pkgs, host, ... }:
 
 {
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "Nord";
+    };
+  };
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
