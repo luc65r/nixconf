@@ -5,6 +5,7 @@
     ./disks.nix
     ./fonts.nix
     ../../desktops
+    ../../services/battery.nix
   ];
 
   boot = {
