@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
-{
+let
+  nordTheme = import ../../colorthemes/nord.nix;
+  nord = n: builtins.substring 1 7 (builtins.elemAt nordTheme.palette n);
+in {
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.overrideAttrs (old: {
@@ -35,7 +38,25 @@
 
   services.fnott = {
     enable = true;
-    settings = {};
+    settings = rec {
+      main = {
+      };
+      normal = {
+        background = nord 0;
+        border-color = nord 4;
+        border-size = 1;
+        title-font = "Iosevka:weight=bold:size=13";
+        title-color = nord 4;
+        summary-font = "Iosevka:size=13";
+        summary-color = nord 4;
+        body-font = "Iosevka:size=13";
+        body-color = nord 4;
+      };
+      low = normal;
+      critical = normal // {
+        border-color = nord 11;
+      };
+    };
   };
 
   services.kanshi = {
