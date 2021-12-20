@@ -72,10 +72,24 @@
     After = [ "graphical-session-pre.target" ];
   };
 
+  systemd.user.services.wbg = {
+    Unit = {
+      Description = "set wallpaper";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.wbg}/bin/wbg /home/lucas/Wallpapers/nord-vice-city.png";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   home.packages = with pkgs; [
     river
     fuzzel
     alacritty
     kanshi
+    wbg
   ];
 }
