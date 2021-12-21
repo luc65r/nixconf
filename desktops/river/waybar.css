@@ -1,0 +1,63 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: Iosevka;
+    font-size: 16px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background: @nord0;
+    color: @nord6;
+}
+
+#tags button {
+    padding: 0 5px;
+    background: @nord0;
+    color: @nord6;
+    border-bottom: 3px solid @nord0;
+}
+
+#tags button:hover {
+    background: @nord3;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-bottom-color: @nord3;
+}
+
+#tags button.occuped {
+    border-bottom-color: @nord5;
+}
+
+#tags button.urgent {
+    border-bottom-color: @nord11;
+}
+
+#tags button.focused {
+    background: @nord1;
+    border-bottom-color: @nord1;
+}
+
+#battery,
+#tray,
+#clock {
+    background: @nord0;
+    color: @nord6;
+    padding: 0 10px;
+}
+
+#battery {
+    border-bottom: 3px solid @nord0;
+}
+
+#battery.charging, #battery.plugged {
+    border-bottom-color: @nord7;
+}
+
+#battery.warning:not(.charging) {
+    border-bottom-color: @nord12;
+}
+
+#battery.critical:not(.charging) {
+    border-bottom-color: @nord11;
+}

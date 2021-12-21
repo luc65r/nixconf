@@ -1,7 +1,7 @@
-{ ... }:
+{ lib, ... }:
 
 let
-  nordTheme = import ../colorthemes/nord.nix;
+  nordTheme = import ../colorthemes/nord.nix lib;
   nord = builtins.elemAt nordTheme.palette;
 in {
   programs.alacritty = {

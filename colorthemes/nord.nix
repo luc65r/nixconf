@@ -1,4 +1,4 @@
-{
+lib: rec {
   palette = [
     "#2e3440"
     "#3b4252"
@@ -17,4 +17,9 @@
     "#a3be8c"
     "#b48ead"
   ];
+
+  css = lib.concatStrings
+    (lib.imap0
+      (i: c: "@define-color nord${toString i} ${c};\n")
+      palette);
 }

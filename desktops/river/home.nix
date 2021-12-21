@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
-  nordTheme = import ../../colorthemes/nord.nix;
-  nord = n: builtins.substring 1 7 (builtins.elemAt nordTheme.palette n);
+  nordTheme = import ../../colorthemes/nord.nix lib;
 in {
   programs.waybar = {
     enable = true;
@@ -15,6 +14,8 @@ in {
       ];
     });
     systemd.enable = true;
+
+    style = nordTheme.css + builtins.readFile ./waybar.css;
 
     settings = [{
       layer = "top";
@@ -33,12 +34,25 @@ in {
         "tray"
         "clock"
       ];
+      modules = {
+        "river/tags" = {
+          disable-click = false;
+        };
+        battery = {
+          states = {
+            warning = 30;
+            critical = 10;
+          };
+        };
+      };
     }];
   };
 
   services.fnott = {
     enable = true;
-    settings = rec {
+    settings = let
+      nord = n: builtins.substring 1 7 (builtins.elemAt nordTheme.palette n);
+    in rec {
       main = {
       };
       normal = {
