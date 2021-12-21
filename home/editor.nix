@@ -110,6 +110,7 @@
       scala-mode
       sbt-mode
       llvm-mode
+      polymode
     ];
   };
 

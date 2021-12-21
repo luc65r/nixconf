@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  script = pkgs.writeShellScript "check-battery-level" ''
+  script = pkgs.writeShellScript "check-battery-level" /* sh */ ''
     notify() {
       sudo -u lucas $dbus notify-send "$1" "$2"
     }
