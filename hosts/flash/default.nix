@@ -160,6 +160,8 @@
 
   services.xserver.videoDrivers = [ "radeon" ];
 
+  virtualisation.docker.enable = true;
+
   users = {
     mutableUsers = false;
 
@@ -175,7 +177,7 @@
         isNormalUser = true;
         createHome = false;
         shell = pkgs.zsh;
-        extraGroups = [ "wheel" "audio" "video" "transmission" "libvirtd" ];
+        extraGroups = [ "wheel" "audio" "video" "transmission" "libvirtd" "docker" ];
       };
     };
   };
