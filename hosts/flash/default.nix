@@ -74,6 +74,10 @@
     "/share/zsh"
   ];
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="e0:d5:5e:2a:8a:96", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+  '';
+
   networking = {
     hostName = "flash";
     hostId = "ab654bd1";
@@ -92,7 +96,7 @@
     nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
 
     bridges = {
-      br0.interfaces = [ "enp4s0" ];
+      br0.interfaces = [ "eth0" ];
     };
 
     nat = {
