@@ -111,6 +111,7 @@
       sbt-mode
       llvm-mode
       polymode
+      slime
     ];
   };
 
