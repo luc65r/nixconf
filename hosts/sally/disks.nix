@@ -7,13 +7,26 @@
 
   boot = {
     initrd = {
+      supportedFilesystems = [ "zfs" ];
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
-      luks.devices."persist".device = "/dev/disk/by-uuid/9ea72a37-3975-4a72-aba0-f3b8c33f692d";
     };
+    supportedFilesystems = [ "zfs" ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+
+    zfs = {
+      enableUnstable = true;
+      requestEncryptionCredentials = true;
+    };
+    loader.grub.zfsSupport = true;
   };
+
+  services.udev.extraRules = ''
+    ACTION=="add|change", KERNEL=="sd[a-z]*[0-9]*|mmcblk[0-9]*p[0-9]*|nvme[0-9]*n[0-9]*p[0-9]*", ENV{ID_FS_TYPE}=="zfs_member", ATTR{../queue/scheduler}="none"
+  '';
+
+  services.zfs.autoScrub.enable = true;
 
   fileSystems."/" = {
     device = "tmpfs";
@@ -21,14 +34,19 @@
   };
 
   fileSystems."/persist" = {
-    device = "/dev/mapper/persist";
-    fsType = "ext4";
+    device = "zroot/nixos/persist";
+    fsType = "zfs";
     neededForBoot = true;
   };
 
+  fileSystems."/home" = {
+    device = "zroot/home";
+    fsType = "zfs";
+  };
+
   fileSystems."/nix" = {
-    label = "nix";
-    fsType = "ext4";
+    device = "zroot/nixos/nix";
+    fsType = "zfs";
   };
 
   fileSystems."/boot" = {
@@ -37,16 +55,15 @@
   };
 
   swapDevices = [
-    {
+    /*{
       label = "/swap";
-    }
+    }*/
   ];
 
   services.fstrim.enable = true;
 
   environment.persistence."/persist" = {
     directories = [
-      "/home"
       "/var/log"
       "/var/lib/bluetooth"
       "/etc/NetworkManager/system-connections"

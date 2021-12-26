@@ -10,9 +10,14 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      grub = {
+        device = "nodev";
+        efiSupport = true;
+        copyKernels = true;
+      };
     };
+    kernelParams = [ "nohibernate" ];
 
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -53,6 +58,7 @@
 
   networking = {
     hostName = "sally";
+    hostId = "c9f3ffb3";
 
     useDHCP = false;
     interfaces = {
