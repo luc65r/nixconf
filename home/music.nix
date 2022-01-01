@@ -2,7 +2,7 @@
 
 {
   services.mpd = {
-    enable = true;
+    enable = false;
     musicDirectory = if (host.name == "flash")
       then "/srv/music" else "/home/lucas/Musique";
 
