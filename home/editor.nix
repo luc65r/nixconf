@@ -112,6 +112,12 @@
       llvm-mode
       polymode
       slime
+      (flycheck-grammalecte.overrideAttrs (old: {
+        postPatch = ''
+          sed -i grammalecte.el flycheck-grammalecte.el \
+              -e 's,python3,${pkgs.python3.withPackages (p: [ p.grammalecte ])}/bin/python3,'
+        '';
+      }))
     ];
   };
 
