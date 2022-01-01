@@ -22,7 +22,7 @@ My 2020 Slimbook Pro X AMD with blank keycaps
 - Usage: 2020 -
 - CPU: Ryzen 7 4800H
 - RAM: 16 GB @ 3200 GHz
-- SSD: 256 GB (that's not a lot)
+- SSD: Samsung 970 EVO Plus 1 TB
 - Keymap: bépo
 - WM: river
 - Editor: emacs
@@ -32,7 +32,7 @@ My 2020 Slimbook Pro X AMD with blank keycaps
 - Usage: 2018 -
 - CPU: Ryzen 7 1700 @ 4 Ghz
 - RAM: 48 GB @ 3000 MHz
-- SSD: 256 GB
+- SSD: Samsung 840 PRO Series 256 GB
 - Disks:
   - 2 * 4 TB on ZFS in mirror
   - 1.5 TB + 2 TB on ZFS
