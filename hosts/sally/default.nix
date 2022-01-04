@@ -158,6 +158,16 @@
 
   security.sudo.enable = true;
 
+  documentation = {
+    enable = true;
+    man.enable = true;
+    man.generateCaches = true;
+    doc.enable = true;
+    dev.enable = true;
+    info.enable = true;
+    nixos.enable = true;
+  };
+
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = "experimental-features = nix-command flakes";
