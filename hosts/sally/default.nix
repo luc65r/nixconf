@@ -17,7 +17,10 @@
         copyKernels = true;
       };
     };
-    kernelParams = [ "nohibernate" ];
+    kernelParams = [
+      "nohibernate"
+      "zswap.enabled=0"
+    ];
 
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -140,6 +143,12 @@
   };
 
   hardware.wooting.enable = true;
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
 
   users = {
     mutableUsers = false;
