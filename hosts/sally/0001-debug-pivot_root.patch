@@ -1,0 +1,91 @@
+From 2ddf58ee71c9f7975ed90f29f2c158513edd028b Mon Sep 17 00:00:00 2001
+From: Lucas Ransan <lucas@ransan.tk>
+Date: Fri, 7 Jan 2022 15:38:09 +0100
+Subject: [PATCH] debug pivot_root
+
+---
+ fs/namespace.c | 50 +++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 39 insertions(+), 11 deletions(-)
+
+diff --git a/fs/namespace.c b/fs/namespace.c
+index 659a8f39c61a..0a607db07064 100644
+--- a/fs/namespace.c
++++ b/fs/namespace.c
+@@ -3850,14 +3850,30 @@ SYSCALL_DEFINE2(pivot_root, const char __user *, new_root,
+ 	old_mnt = real_mount(old.mnt);
+ 	ex_parent = new_mnt->mnt_parent;
+ 	root_parent = root_mnt->mnt_parent;
+-	if (IS_MNT_SHARED(old_mnt) ||
+-		IS_MNT_SHARED(ex_parent) ||
+-		IS_MNT_SHARED(root_parent))
++	if (IS_MNT_SHARED(old_mnt)) {
++        pr_info("pivot_root: old_mnt is shared\n");
++        goto out4;
++    }
++    if (IS_MNT_SHARED(ex_parent)) {
++        pr_info("pivot_root: ex_parent is shared\n");
++        goto out4;
++    }
++    if (IS_MNT_SHARED(root_parent)) {
++        pr_info("pivot_root: root_parent is shared\n");
+ 		goto out4;
+-	if (!check_mnt(root_mnt) || !check_mnt(new_mnt))
++    }
++	if (!check_mnt(root_mnt)) {
++        pr_info("pivot_root: root_mnt !check_mnt\n");
++        goto out4;
++    }
++    if (!check_mnt(new_mnt)) {
++        pr_info("pivot_root: new_mnt !check_mnt\n");
+ 		goto out4;
+-	if (new_mnt->mnt.mnt_flags & MNT_LOCKED)
++    }
++	if (new_mnt->mnt.mnt_flags & MNT_LOCKED) {
++        pr_info("pivot_root: new_mnt locked\n");
+ 		goto out4;
++    }
+ 	error = -ENOENT;
+ 	if (d_unlinked(new.dentry))
+ 		goto out4;
+@@ -3865,20 +3881,32 @@ SYSCALL_DEFINE2(pivot_root, const char __user *, new_root,
+ 	if (new_mnt == root_mnt || old_mnt == root_mnt)
+ 		goto out4; /* loop, on the same file system  */
+ 	error = -EINVAL;
+-	if (root.mnt->mnt_root != root.dentry)
++	if (root.mnt->mnt_root != root.dentry) {
++        pr_info("pivot_root: root not a mountpoint\n");
+ 		goto out4; /* not a mountpoint */
+-	if (!mnt_has_parent(root_mnt))
++    }
++	if (!mnt_has_parent(root_mnt)) {
++        pr_info("pivot_root: root_mnt not attached\n");
+ 		goto out4; /* not attached */
+-	if (new.mnt->mnt_root != new.dentry)
++    }
++	if (new.mnt->mnt_root != new.dentry) {
++        pr_info("pivot_root: new not a mountpoint\n");
+ 		goto out4; /* not a mountpoint */
+-	if (!mnt_has_parent(new_mnt))
++    }
++	if (!mnt_has_parent(new_mnt)) {
++        pr_info("pivot_root: new_mnt not attached\n");
+ 		goto out4; /* not attached */
++    }
+ 	/* make sure we can reach put_old from new_root */
+-	if (!is_path_reachable(old_mnt, old.dentry, &new))
++	if (!is_path_reachable(old_mnt, old.dentry, &new)) {
++        pr_info("pivot_root: old_mnt unreachable\n");
+ 		goto out4;
++    }
+ 	/* make certain new is below the root */
+-	if (!is_path_reachable(new_mnt, new.dentry, &root))
++	if (!is_path_reachable(new_mnt, new.dentry, &root)) {
++        pr_info("pivot_root: new_mnt unreachable\n");
+ 		goto out4;
++    }
+ 	lock_mount_hash();
+ 	umount_mnt(new_mnt);
+ 	root_mp = unhash_mnt(root_mnt);  /* we'll need its mountpoint */
+-- 
+2.34.0
+

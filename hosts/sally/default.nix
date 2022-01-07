@@ -23,6 +23,12 @@
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelPatches = [
+      {
+        name = "debug-pivot_root";
+        patch = ./0001-debug-pivot_root.patch;
+      }
+    ];
 
     extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
     kernelModules = [ "zenpower" ];
