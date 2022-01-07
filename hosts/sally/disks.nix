@@ -10,6 +10,9 @@
       supportedFilesystems = [ "zfs" ];
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
+      postDeviceCommands = lib.mkAfter ''
+        zfs rollback -r zroot/nixos/root@blank
+      '';
     };
     supportedFilesystems = [ "zfs" ];
     kernelModules = [ "kvm-amd" ];
@@ -29,8 +32,8 @@
   services.zfs.autoScrub.enable = true;
 
   fileSystems."/" = {
-    device = "tmpfs";
-    fsType = "tmpfs";
+    device = "zroot/nixos/root";
+    fsType = "zfs";
   };
 
   fileSystems."/persist" = {
