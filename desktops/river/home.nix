@@ -111,6 +111,13 @@ in {
     After = [ "graphical-session-pre.target" ];
   };
 
+  xdg.configFile."river/init" = {
+    source = ./init;
+    onChange = ''
+      ${pkgs.procps}/bin/pkill -u $USER river || true
+    '';
+  };
+
   systemd.user.services.wbg = {
     Unit = {
       Description = "set wallpaper";
