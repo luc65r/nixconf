@@ -22,7 +22,7 @@
       "zswap.enabled=0"
     ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelPatches = [
       {
         name = "debug-pivot_root";
