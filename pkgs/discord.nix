@@ -1,92 +1,49 @@
-{ autoPatchelfHook, fetchurl, makeDesktopItem, lib, stdenv, wrapGAppsHook
-, alsaLib, at-spi2-atk, at-spi2-core, atk, cairo, cups, dbus, expat, fontconfig
-, freetype, gdk-pixbuf, glib, gtk3, libcxx, libdrm, libnotify, libpulseaudio, libuuid
-, libX11, libXScrnSaver, libXcomposite, libXcursor, libXdamage, libXext
-, libXfixes, libXi, libXrandr, libXrender, libXtst, libxcb
-, mesa, nspr, nss, pango, systemd, libappindicator-gtk3, libdbusmenu
-, electron_12, nodePackages, gsettings-desktop-schemas
+{ fetchurl
+, makeDesktopItem
+, lib
+, stdenv
+, makeWrapper
+, chromium
 }:
 
-let
-  binaryName = "Discord";
-  desktopName = "Discord";
-in stdenv.mkDerivation rec {
-  pname = "discord-wayland";
-  version = "0.0.16";
+stdenv.mkDerivation rec {
+  pname = "discord-chromium";
+  version = "0.0.1";
 
   src = fetchurl {
-    url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-    sha256 = "UTVKjs/i7C/m8141bXBsakQRFd/c//EmqqhKhkr1OOk=";
+    url = "https://discord.com/assets/f9bb9c4af2b9c32a2c5ee0014661546d.png";
+    sha256 = "BCS6rXFDD3Zmrpmm/3zhVTvPBev+Ld2dgP/7wewWQaI=";
   };
 
   buildInputs = [
-    electron_12
+    chromium
   ];
 
   nativeBuildInputs = [
-    nodePackages.asar
-    alsaLib
-    autoPatchelfHook
-    cups
-    libdrm
-    libuuid
-    libX11
-    libXdamage
-    libXScrnSaver
-    libXtst
-    libxcb
-    mesa.drivers
-    nss
-    wrapGAppsHook
+    makeWrapper
   ];
 
-  dontWrapGApps = true;
-
-  libPath = lib.makeLibraryPath [
-    libcxx systemd libpulseaudio
-    stdenv.cc.cc alsaLib atk at-spi2-atk at-spi2-core cairo cups dbus expat fontconfig freetype
-    gdk-pixbuf glib gtk3 libnotify libX11 libXcomposite libuuid
-    libXcursor libXdamage libXext libXfixes libXi libXrandr libXrender
-    libXtst nspr nss libxcb pango systemd libXScrnSaver
-    libappindicator-gtk3 libdbusmenu gsettings-desktop-schemas
-  ];
+  dontUnpack = true;
+  dontConfigure = true;
+  dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/{bin,lib/${binaryName},opt/${binaryName},share/pixmaps}
-    cp -r * $out/opt/${binaryName}
+    mkdir -p $out/{bin,share/pixmaps}
+    ln -s ${src} $out/share/pixmaps/discord.png
+    ln -s ${desktopItem}/share/applications $out/share
 
-    asar e resources/app.asar resources/app
-    rm resources/app.asar
-    sed -i "s|process.resourcesPath|'$out/lib/${binaryName}'|" \
-      resources/app/app_bootstrap/buildInfo.js
-    sed -i "s|exeDir,|'$out/share/pixmaps',|" resources/app/app_bootstrap/autoStart/linux.js
-
-    asar p resources/app resources/app.asar --unpack-dir '**'
-    rm -rf resources/app
-
-    cp -r resources/* $out/lib/${binaryName}/
-
-    ln -s $out/opt/${binaryName}/discord.png $out/share/pixmaps/${pname}.png
-
-    ln -s "${desktopItem}/share/applications" $out/share/
-  '';
-
-  postFixup = ''
-    makeWrapper ${electron_12}/bin/electron $out/bin/${binaryName} \
+    makeWrapper ${chromium}/bin/chromium $out/bin/discord \
       --add-flags "--enable-features=UseOzonePlatform,WebRTCPipeWireCapturer" \
       --add-flags "--ozone-platform=wayland" \
-      --add-flags "--enable-gpu" \
-      --add-flags $out/lib/${binaryName}/app.asar \
-      "''${gappsWrapperArgs[@]}" \
-      --prefix XDG_DATA_DIRS : "${gtk3}/share/gsettings-schemas/${gtk3.name}/" \
-      --prefix LD_LIBRARY_PATH : ${libPath}
+      --add-flags "--user-data-dir=\$XDG_CONFIG_HOME/discord-chromium" \
+      --add-flags "--app=https://discord.com/app"
   '';
 
   desktopItem = makeDesktopItem {
-    name = pname;
-    exec = binaryName;
-    icon = pname;
-    inherit desktopName;
+    name = "discord";
+    exec = "discord";
+    icon = "discord";
+    desktopName = "discord";
     genericName = meta.description;
     categories = "Network;InstantMessaging;";
     mimeType = "x-scheme-handler/discord";
@@ -94,10 +51,9 @@ in stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "All-in-one cross-platform voice and text chat for gamers";
-    homepage = "https://discordapp.com/";
-    downloadPage = "https://discordapp.com/download";
+    homepage = "https://discord.com";
     license = licenses.unfree;
-    maintainers = with maintainers; [ ldesgoui MP2E tadeokondrak luc65r ];
-    platforms = [ "x86_64-linux" ];
+    maintainers = with maintainers; [ luc65r ];
+    platforms = chromium.meta.platforms;
   };
 }

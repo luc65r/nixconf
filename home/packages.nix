@@ -27,7 +27,7 @@ with pkgs;
 
   ktouch
 
-  discord-wayland
+  discord-chromium
   teams
   element-desktop
   signal-desktop

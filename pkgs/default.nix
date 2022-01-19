@@ -1,5 +1,7 @@
 self: super:
 {
   ryzenadj = self.callPackage ./ryzenadj.nix {};
-  discord-wayland = self.callPackage ./discord.nix {};
+  discord-chromium = self.callPackage ./discord.nix {
+    chromium = self.ungoogled-chromium;
+  };
 }
