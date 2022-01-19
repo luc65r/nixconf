@@ -2,6 +2,7 @@
 
 let
   launcher = pkgs.writeShellScript "launch-river" ''
+    . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
     export XKB_DEFAULT_LAYOUT=fr
     export XKB_DEFAULT_VARIANT=bepo
     export XKB_DEFAULT_OPTIONS=ctrl:swapcaps
