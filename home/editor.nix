@@ -118,6 +118,7 @@
               -e 's,python3,${pkgs.python3.withPackages (p: [ p.grammalecte ])}/bin/python3,'
         '';
       }))
+      glsl-mode
     ];
   };
 
