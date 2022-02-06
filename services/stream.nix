@@ -17,7 +17,7 @@ in {
       enableACME = true;
       addSSL = true;
 
-      root = ./stream;
+      root = "/srv/www";
 
       locations."/utc_timestamp" = {
         return = "200 \"$time_iso8601\"";
@@ -37,12 +37,10 @@ in {
     };
 
     virtualHosts."instream.ransan.tk" = {
-      listen = [
-        { addr = "127.0.0.1"; port = 8001; ssl = true; }
-      ];
-
       enableACME = true;
       addSSL = true;
+
+      root = "/srv/www";
 
       extraConfig = ''
         #ssl_client_certificate "<path to CA for client certs>";
@@ -70,7 +68,11 @@ in {
     serviceConfig = {
       Type = "simple";
       Restart = "on-failure";
-      ExecStart = "${pkgs.python3} ${dash_server_py} -p ${toString dash_server_py_port}";
+      ExecStart = "${pkgs.python3}/bin/python ${dash_server_py} -p ${toString dash_server_py_port} -4 /srv/www";
     };
   };
+
+  networking.firewall.allowedTCPPorts = [
+    8000
+  ];
 }
