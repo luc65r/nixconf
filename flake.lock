@@ -30,14 +30,14 @@
         "fenix": "fenix_2",
         "flake-utils": "flake-utils",
         "naersk": "naersk_2",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1644439365,
-        "narHash": "sha256-xcLRBXebCFTYw6VSA+bNe3BTbG2T8BiWosrA75wpTvA=",
+        "lastModified": 1644441108,
+        "narHash": "sha256-7LSMwt1PUzZ7JeOlEruww+6HeNQmbyrKxTZFHLo0HkY=",
         "owner": "alyrow",
         "repo": "cyrel",
-        "rev": "795f165968a82a2ce4fbf13da56363e6c160729e",
+        "rev": "ad32594dbe97764d0196216866155ad713f474cf",
         "type": "github"
       },
       "original": {
@@ -82,7 +82,10 @@
     },
     "fenix_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": [
+          "cyrel",
+          "nixpkgs"
+        ],
         "rust-analyzer-src": "rust-analyzer-src_2"
       },
       "locked": {
@@ -185,7 +188,10 @@
     },
     "naersk_2": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": [
+          "cyrel",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1639947939,
@@ -263,35 +269,6 @@
       }
     },
     "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1644359234,
-        "narHash": "sha256-u/sBnRgrFrn9W8gZMS6vN3ZnJsoTvbws968TpqwlDJQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "c5051e2b5fe9fab43a64f0e0d06b62c81a890b90",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
-        "lastModified": 1642281915,
-        "narHash": "sha256-jcMsXmmO1knyf99o242A+2cy1A0eKa9afly0cwBknPA=",
-        "path": "/nix/store/1q3bx2vjp4afq1wglhxgva9rhs69k8ri-source",
-        "rev": "d5dae6569ea9952f1ae4e727946d93a71c507821",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_5": {
       "locked": {
         "lastModified": 1642130244,
         "narHash": "sha256-/5FhZkZFQCRQIRFosUQW1zmDrsNHVOJIB/+XgRPHiPU=",
