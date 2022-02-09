@@ -33,11 +33,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1644441711,
-        "narHash": "sha256-RcmpqdZ6H9QhXUmi61wUF/oqGqfZ+dbyunHBKDPuZo8=",
+        "lastModified": 1644447976,
+        "narHash": "sha256-FhscH2iN1eEB7ug7ORdn7a4d3rcRxWkYzWyGWGu4Lc4=",
         "owner": "alyrow",
         "repo": "cyrel",
-        "rev": "f18de2e6acffe1e1a6ef3a1a499a74652469d266",
+        "rev": "ca249527b39ea75b04d5ee9f408f5fc066a4223c",
         "type": "github"
       },
       "original": {
