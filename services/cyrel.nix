@@ -52,6 +52,7 @@ in {
       ExecStart = "${pkgs.cyrel}/bin/cyrel-sync-courses";
       User = "cyrel";
       WorkingDirectory = "/srv/cyrel";
+      LimitNOFILE = "65536";
     };
   };
 
