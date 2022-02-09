@@ -42,24 +42,44 @@ in {
     locations."/".proxyPass = "http://localhost:${toString port}";
   };
 
-  systemd.services.cyrel-sync = {
-    description = "Cyrel Sync";
+  systemd.services.cyrel-sync-courses = {
+    description = "Cyrel Sync Courses";
 
     environment = cyrel_env;
 
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.cyrel}/bin/cyrel-sync";
+      ExecStart = "${pkgs.cyrel}/bin/cyrel-sync-courses";
       User = "cyrel";
       WorkingDirectory = "/srv/cyrel";
     };
   };
 
-  systemd.timers.cyrel-sync = {
-    description = "Cyrel Sync timer";
+  systemd.timers.cyrel-sync-courses = {
+    description = "Cyrel Sync Courses timer";
     wantedBy = [ "timers.target" ];
-    partOf = [ "cyrel-sync.service" ];
+    partOf = [ "cyrel-sync-courses.service" ];
     timerConfig.OnCalendar = "hourly";
+  };
+
+  systemd.services.cyrel-sync-students = {
+    description = "Cyrel Sync Students";
+
+    environment = cyrel_env;
+
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.cyrel}/bin/cyrel-sync-students";
+      User = "cyrel";
+      WorkingDirectory = "/srv/cyrel";
+    };
+  };
+
+  systemd.timers.cyrel-sync-students = {
+    description = "Cyrel Sync Students timer";
+    wantedBy = [ "timers.target" ];
+    partOf = [ "cyrel-sync-students.service" ];
+    timerConfig.OnCalendar = "weekly";
   };
 
   users.users.cyrel = {
