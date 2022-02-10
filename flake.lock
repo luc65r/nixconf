@@ -338,8 +338,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1637612071,
-        "narHash": "sha256-kpi+loePNK5ixjAtJWsIiKqBFLRiLbGbwnpNmUWWT6g=",
+        "lastModified": 1644449548,
+        "narHash": "sha256-vNBrpRWuJSrvl9FMKB35Et7PepBrfBssswZvHd7CWIw=",
         "type": "git",
         "url": "file:///home/lucas/nixsecrets"
       },
