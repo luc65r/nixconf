@@ -180,7 +180,10 @@
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = "experimental-features = nix-command flakes";
-    trustedUsers = [ "root" "lucas" ];
+    settings = {
+      trustedUsers = [ "root" "lucas" ];
+      auto-optimise-store = true;
+    };
   };
 
   nixpkgs = {
