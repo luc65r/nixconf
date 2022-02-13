@@ -1,6 +1,6 @@
-self: super: {
-  python = super.python.override {
-    packagesOverride = self: super: {
+self: super: rec {
+  python3 = super.python3.override {
+    packageOverrides = self: super: {
       remarshal = super.remarshal.overrideAttrs (old: {
         postPatch = ''
           substituteInPlace pyproject.toml \
@@ -11,4 +11,6 @@ self: super: {
       });
     };
   };
+
+  python3Packages = python3.pkgs;
 }
