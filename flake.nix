@@ -100,6 +100,7 @@
                 ] else [
                   emacs.overlay
                   (import ./overlays/gtk.nix)
+                  (import ./overlays/fixes.nix)
                 ];
               }
             ];
