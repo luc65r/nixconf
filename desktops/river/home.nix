@@ -5,18 +5,7 @@ let
 in {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (old: {
-      patches = [
-        (pkgs.fetchpatch {
-          url = "https://github.com/Alexays/Waybar/commit/024fd42e272f79cb08e594eb3af86c93b1446c91.patch";
-          sha256 = "NExAWhuizKiyYgAPNIUPucGz5GDi8umevAOY5HtLQJk=";
-        })
-        (pkgs.fetchpatch {
-          url = "https://github.com/Alexays/Waybar/commit/ad3f46214d791b98364dd95719ee49c9446f20a5.patch";
-          sha256 = "/Uf5DHII+qICLq/DbmMtJAvTvld9UuSa1/Ka20/XFuc=";
-        })
-      ];
-    });
+    package = pkgs.waybar;
     systemd.enable = true;
 
     style = nordTheme.css + builtins.readFile ./waybar.css;
