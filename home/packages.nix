@@ -22,6 +22,8 @@ with pkgs;
   dnsutils
   usbutils
   pciutils
+  openssl
+  sshfs
 
   nix-prefetch-github
 
@@ -46,6 +48,7 @@ with pkgs;
   (steam.override {
     extraLibraries = pkgs: [ pkgs.pipewire ];
   })
+  lutris
   moonlight-qt
   zoom-us
 
