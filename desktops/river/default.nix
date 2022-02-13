@@ -19,6 +19,8 @@ in {
     };
   };
 
+  programs.dconf.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr = {
