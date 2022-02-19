@@ -107,6 +107,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/var/lib/jellyfin" = {
+    device = "qto/jellyfin";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";

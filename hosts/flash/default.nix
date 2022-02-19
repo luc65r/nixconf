@@ -26,21 +26,25 @@
     };
 
     kernelPackages = pkgs.linuxPackages;
+    /*
     kernelPatches = [
       {
         name = "add-acs-overrides";
         patch = ./add-acs-overrides.patch;
       }
     ];
+    */
 
     extraModulePackages = with config.boot.kernelPackages; [ zenpower v4l2loopback ];
     initrd.availableKernelModules = [ "vfio-pci" ];
     kernelParams = [
+      /*
       "amd_iommu=on" "vfio-pci.ids=10de:1b80,10de:10f0"
       "pcie_acs_override=downstream,multifunction"
       "video=vesafb:off" "video=efifb:off"
       # Reserve 8GB for the vm
       "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
+      */
       # Reboot if panic
       "panic=1"
     ];
@@ -163,7 +167,8 @@
     ];
   };
 
-  services.xserver.videoDrivers = [ "radeon" ];
+  services.xserver.videoDrivers = [ "radeon" "nvidia" ];
+  hardware.nvidia.nvidiaPersistenced = true;
 
   virtualisation.docker.enable = true;
 
