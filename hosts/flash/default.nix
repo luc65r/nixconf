@@ -160,7 +160,7 @@
   };
 
   hardware.opengl = {
-    enable = false;
+    enable = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       amdvlk # Vulkan
