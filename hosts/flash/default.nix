@@ -16,6 +16,7 @@
     ../../services/stream.nix
     ../../services/torrent.nix
     ../../services/tracker.nix
+    ../../services/jellyfin.nix
   ];
 
   boot = {
