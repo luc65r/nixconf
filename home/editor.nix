@@ -119,6 +119,7 @@
         '';
       }))
       glsl-mode
+      idris-mode
     ];
   };
 
