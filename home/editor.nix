@@ -120,6 +120,7 @@
       }))
       glsl-mode
       idris-mode
+      elixir-mode
     ];
   };
 
