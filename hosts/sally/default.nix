@@ -94,6 +94,10 @@
 
   programs.nm-applet.enable = true;
 
+  services.postgresql.authentication = lib.mkForce ''
+    local all all trust
+  '';
+
   sound.enable = true;
   services.pipewire = {
     enable = true;
