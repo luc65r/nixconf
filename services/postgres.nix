@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ host, pkgs, ... }:
 
 {
   services.postgresql = {
@@ -7,7 +7,7 @@
   };
 
   services.postgresqlBackup = {
-    enable = true;
+    enable = host.type == "server";
     backupAll = true;
   };
 }

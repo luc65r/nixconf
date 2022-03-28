@@ -6,6 +6,7 @@
     ./fonts.nix
     ../../desktops
     ../../services/battery.nix
+    ../../services/postgres.nix
   ];
 
   boot = {
