@@ -31,6 +31,12 @@
     };
 
     cyrel.url = "github:alyrow/cyrel";
+
+    grid = {
+      url = "github:luc65r/grid";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -44,6 +50,7 @@
     , secrets
     , botCYeste
     , cyrel
+    , grid
     }: {
       nixosConfigurations = let
         defaultConfig =
@@ -101,6 +108,9 @@
                   emacs.overlay
                   (import ./overlays/gtk.nix)
                   (import ./overlays/fixes.nix)
+                  (_: _: {
+                    grid = grid.defaultPackage.${system};
+                  })
                 ];
               }
             ];

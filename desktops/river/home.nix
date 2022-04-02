@@ -126,5 +126,6 @@ in {
     alacritty
     kanshi
     wbg
+    grid
   ];
 }
