@@ -120,6 +120,19 @@ in {
     Install.WantedBy = [ "graphical-session.target" ];
   };
 
+  systemd.user.services.grid = {
+    Unit = {
+      Description = "river grid layout";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.grid}/bin/grid";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   home.packages = with pkgs; [
     river
     fuzzel
