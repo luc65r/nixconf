@@ -1,4 +1,4 @@
-{ pkgs, host }:
+{ pkgs, lib, host }:
 
 with pkgs;
 
@@ -6,9 +6,6 @@ with pkgs;
   htop
   gotop
   bpytop
-
-  zenmonitor
-  ryzenadj
 
   ripgrep
   fd
@@ -26,6 +23,14 @@ with pkgs;
   sshfs
 
   nix-prefetch-github
+
+  zip
+  unzip
+
+  xdg-utils
+] ++ lib.optionals (host.name == "sally") [
+  zenmonitor
+  ryzenadj
 
   ktouch
 
@@ -51,9 +56,4 @@ with pkgs;
   lutris
   moonlight-qt
   zoom-us
-
-  zip
-  unzip
-
-  xdg-utils
 ]

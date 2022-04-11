@@ -230,9 +230,6 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      (import ../../pkgs)
-    ];
   };
 
   system.stateVersion = "21.05";
