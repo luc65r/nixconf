@@ -16,6 +16,15 @@
         device = "nodev";
         efiSupport = true;
         copyKernels = true;
+        extraEntries = ''
+          menuentry "FreeBSD"  --class freebsd --class bsd --class os {
+            insmod zfs
+            insmod bsd
+            search -s -l zroot
+            kfreebsd /freebsd/@/boot/zfsloader
+            kfreebsd_loadenv /freebsd/@/boot/device.hints
+          }
+        '';
       };
     };
     kernelParams = [
