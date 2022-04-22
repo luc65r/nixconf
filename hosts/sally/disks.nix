@@ -21,6 +21,7 @@
     zfs = {
       enableUnstable = true;
       requestEncryptionCredentials = true;
+      forceImportRoot = false;
     };
     loader.grub.zfsSupport = true;
   };
