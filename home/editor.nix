@@ -122,6 +122,7 @@
       idris-mode
       elixir-mode
       web-mode
+      bison-mode
     ];
   };
 
