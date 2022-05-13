@@ -48,7 +48,7 @@
 
   programs.emacs = {
     enable = host.type != "server";
-    package = pkgs.emacsPgtkGcc.override {
+    package = pkgs.emacsPgtkNativeComp.override {
       gtk3-x11 = pkgs.gtk3-xdg-decoration;
     };
     extraPackages = epkgs: with epkgs; [
