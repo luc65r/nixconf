@@ -56,7 +56,9 @@
       nix-mode
       nord-theme
       haskell-mode
-      pdf-tools
+      (pdf-tools.overrideAttrs (old: {
+        CXXFLAGS = "-std=c++17";
+      }))
       rg
       lsp-mode
       company
