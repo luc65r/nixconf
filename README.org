@@ -5,7 +5,7 @@
 ** Rebuild the system
 
 #+begin_src shell
-  sudo nixos-rebuild --flakes . switch
+  nixos-rebuild --use-remote-sudo --flakes . switch
 #+end_src
 
 ** Update flake.lock
