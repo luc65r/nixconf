@@ -17,6 +17,12 @@
         efiSupport = true;
         copyKernels = true;
         extraEntries = ''
+          menuentry "Arch Linux" --class linux --class os {
+            search --set=drive1 --fs-uuid 9518-C3D1
+            linux ($drive1)//arch/vmlinuz-linux zfs=zroot/arch rw zfs_force=1
+            initrd ($drive1)//arch/initramfs-linux.img
+          }
+
           menuentry "FreeBSD" --class freebsd --class bsd --class os {
             insmod part_gpt
             insmod fat
