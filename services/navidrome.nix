@@ -35,7 +35,9 @@ in {
   users.users.navidrome = {
     inherit home;
     createHome = true;
+    group = "navidrome";
   };
+  users.groups.navidrome = {};
 
   services.nginx.virtualHosts."music.ransan.tk" = {
     enableACME = true;

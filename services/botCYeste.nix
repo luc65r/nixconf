@@ -17,5 +17,7 @@
 
   users.users.cyeste = {
     isSystemUser = true;
+    group = "cyeste";
   };
+  users.groups.cyeste = {};
 }

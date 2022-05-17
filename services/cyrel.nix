@@ -85,7 +85,9 @@ in {
 
   users.users.cyrel = {
     isSystemUser = true;
+    group = "cyrel";
   };
+  users.groups.cyrel = {};
 
   services.postgresql = {
     ensureUsers = [
