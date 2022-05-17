@@ -26,7 +26,6 @@
 
     botCYeste = {
       url = "github:luc65r/botCYeste";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.flake-utils.follows = "flake-utils";
     };
 
