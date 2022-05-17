@@ -125,6 +125,10 @@
             inherit (secrets.wireguard.whyred) publicKey;
             allowedIPs = [ "10.0.0.3/32" ];
           }
+          {
+            inherit (secrets.wireguard.tacot) publicKey;
+            allowedIPs = [ "10.0.0.4/32" ];
+          }
         ];
       };
     };
@@ -135,12 +139,14 @@
         80 443
         47984 47989 48010 # moonlight
         5201 # iperf
+        2350 3450 # trackmania
       ];
       allowedUDPPorts = [
         80 443
         5353 47998 47999 48000 48002 48010 # moonlight
         51820 # wireguard
         5201 # iperf
+        2350 3450 # trackmania
       ];
     };
   };
