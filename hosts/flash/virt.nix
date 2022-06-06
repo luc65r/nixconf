@@ -10,7 +10,7 @@
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
-      ovmf = true;
+      ovmf.enable = true;
       runAsRoot = false;
     };
     onBoot = "ignore";
