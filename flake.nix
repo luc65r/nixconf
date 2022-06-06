@@ -98,7 +98,9 @@
                 };
               }
               {
-                nixpkgs.overlays = if type == "server" then [
+                nixpkgs.overlays = [
+                  (import ./overlays/fixes.nix)
+                ] ++ (if type == "server" then [
                   (_: _: {
                     botCYeste = botCYeste.defaultPackage.${system};
                     cyrel = cyrel.defaultPackage.${system};
@@ -106,11 +108,10 @@
                 ] else [
                   emacs.overlay
                   (import ./overlays/gtk.nix)
-                  (import ./overlays/fixes.nix)
                   (_: _: {
                     grid = grid.defaultPackage.${system};
                   })
-                ];
+                ]);
               }
             ];
           };
