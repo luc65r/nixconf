@@ -4,7 +4,7 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-21.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     impermanence = {
@@ -26,7 +26,6 @@
 
     botCYeste = {
       url = "github:luc65r/botCYeste";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     cyrel.url = "github:alyrow/cyrel";
