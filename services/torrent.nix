@@ -6,7 +6,6 @@
     home = "/srv/torrent";
     openFirewall = true;
     downloadDirPermissions = "775";
-    port = 9091;
     settings = {
       rpc-enabled = true;
       rpc-bind-address = "0.0.0.0";

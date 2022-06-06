@@ -9,8 +9,10 @@
 
   virtualisation.libvirtd = {
     enable = true;
-    qemuOvmf = true;
-    qemuRunAsRoot = false;
+    qemu = {
+      ovmf = true;
+      runAsRoot = false;
+    };
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
