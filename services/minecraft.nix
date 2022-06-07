@@ -25,4 +25,13 @@ in {
     group = "minecraft";
   };
   users.groups.minecraft = {};
+
+  networking.firewall = {
+    allowedTCPPorts = [
+      25565
+    ];
+    allowedUDPPorts = [
+      25565
+    ];
+  };
 }
