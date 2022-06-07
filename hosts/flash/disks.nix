@@ -67,7 +67,7 @@
     fsType = "zfs";
   };
 
-  fileSystems."/srv/znc" = {
+  fileSystems."/var/lib/znc" = {
     device = "qto/znc";
     fsType = "zfs";
   };

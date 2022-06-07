@@ -6,7 +6,6 @@
     mutable = true;
     useLegacyConfig = false;
     openFirewall = true;
-    configFile = "/srv/znc";
 
     config = {
       LoadModule = [ "webadmin" "adminlog" ];
