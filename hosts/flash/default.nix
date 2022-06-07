@@ -18,6 +18,7 @@
     ../../services/tracker.nix
     ../../services/jellyfin.nix
     ../../services/znc.nix
+    ../../services/minecraft.nix
   ];
 
   boot = {

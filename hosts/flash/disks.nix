@@ -112,6 +112,11 @@
     fsType = "zfs";
   };
 
+  fileSystems."/srv/minecraft" = {
+    device = "qto/minecraft";
+    fsType = "zfs";
+  };
+
   swapDevices = [
     {
       label = "/swap";
