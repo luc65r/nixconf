@@ -113,7 +113,7 @@
       sbt-mode
       llvm-mode
       polymode
-      slime
+      #slime
       (flycheck-grammalecte.overrideAttrs (old: {
         postPatch = ''
           sed -i grammalecte.el flycheck-grammalecte.el \
